@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { AdvertsComponent } from './adverts/adverts.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { AddservService } from './addserv.service';
 
 const ROUTES = [
   {
@@ -34,7 +34,7 @@ const ROUTES = [
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [AddservService,{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
