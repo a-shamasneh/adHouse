@@ -7,7 +7,7 @@ require('./server/config/routes.js') (app,express);
 //=============================================================================
 /*									Database								 */
 //=============================================================================
-	var mongoURI = 'mongodb://mais:1234@ds019866.mlab.com:19866/adhouse' ||'mongodb://localhost/test';
+	var mongoURI = 'mongodb://localhost/house';
 	mongoose.connect(mongoURI);
 	db = mongoose.connection;
 
@@ -17,7 +17,7 @@ require('./server/config/routes.js') (app,express);
 //=============================================================================
 /*									Server   								 */
 //=============================================================================
-	var port = process.env.PORT || 3000;
+	var port = process.env.PORT || 8090;
 	app.listen(port , function () {
 		console.log('...Server now listening on port ' + port);
 	});
