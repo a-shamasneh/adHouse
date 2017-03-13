@@ -1,0 +1,20 @@
+<div class="container clear">
+	<h1>home work</h1>
+	<div *ngFor="let ad of alladds">
+        <div class="col-md-1">
+            <input type="checkbox">
+        </div>
+        <div class="col-md-7">
+            {{ad._id}}&nbsp;  {{ad.ad_approve}} <br>
+            {{ad.ad_date}}&nbsp;  {{ad.ad_cat}}<br>
+            {{ad.ad_loc}}&nbsp;  {{ad.ad_desc}}<br>
+            {{ad.ad_phone}}<br>
+           <img src="{{ad.ad_img}}">
+
+        </div> 
+        <div class="col-md-4">
+            <input type="button" (click)="deletemov(task._id)" value="Delete" class="btn btn-danger">    
+        </div>
+        <br><br>
+    </div>
+</div>

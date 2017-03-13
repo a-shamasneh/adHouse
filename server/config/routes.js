@@ -6,7 +6,8 @@ module.exports = function (app, express) {
 		app.post('/api/addserv',AdvController.Addserv);
 		app.post('/api/:username', UserController.getuserByUserName);
 		app.post('/api/signup',UserController.signupUser);
-
+		app.get('/api/adds/getall',AdvController.getall);
+		
 		
 };
 
