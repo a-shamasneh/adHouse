@@ -1,5 +1,5 @@
-
-<div class="panel panel-default">
+<div class="container">
+  <div class="panel panel-default">
   <div>
     <h3 class="panel-title" ng-controller="BookController">Add New addvertise</h3>
   </div>
@@ -39,7 +39,7 @@
        <!--  upload img start -->
        <div class="form-group">
           <label>upload image</label>
-          <input type="file"  (change)="fileChange(input)" #input />
+          <input type="file"  (change)="fileChange(input)" #input  required accept="image/*" />
         </div>
 
        <!-- end upload image  -->
@@ -59,3 +59,5 @@
     </div>
   </div>
 </div>
+</div>
+

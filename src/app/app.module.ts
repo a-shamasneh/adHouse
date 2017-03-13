@@ -9,12 +9,13 @@ import { NavComponent } from './nav/nav.component';
 import { AdvertsComponent } from './adverts/adverts.component';
 import { FooterComponent } from './footer/footer.component';
 import { AddservService } from './addserv.service';
+import { HomeComponent } from './home/home.component';
+import { GetaddService } from './getadd.service';
 
 const ROUTES = [
   {
     path: '',
-    redirectTo: '',
-    pathMatch: 'full'
+    component:HomeComponent
   },
   {
     path: 'Adds',
@@ -26,7 +27,8 @@ const ROUTES = [
     AppComponent,
     NavComponent,
     AdvertsComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,7 @@ const ROUTES = [
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [AddservService,{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [AddservService,GetaddService,{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
