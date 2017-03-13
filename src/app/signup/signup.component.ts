@@ -5,11 +5,10 @@ import { AuthService } from '../auth.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
-	 fullname:string;
+export class SignupComponent {
+	 username:string;
 	 email: string;
 	 password:string;
-	 //image:string;
 	 message:string;
   constructor(private Auth:AuthService) {
    }
@@ -18,29 +17,18 @@ export class SignupComponent implements OnInit {
   }
 	 addUser(){
 	    var newUser = {
-	    username:this.fullname,
+	    username:this.username,
 	    email:this.email,
 	    password:this.password
-	    //,
-	   // au_img:this.image,
+	    
 	        }
-	        this.Auth.auth(newUser).subscribe(ok=>{this.message=ok["_body"];
-	       this.fullname = '';
+	        this.Auth.signup(newUser).subscribe(ok=>{this.message=ok["_body"];
+	       this.username = '';
 	       this.email = ''; 
 	       this.password ='';
 	    });   
     };
-    chieckUser(){
-	    var newUser = {
-	    username:this.fullname,
-	    email:this.email,
-	    password:this.password
-	    //,
-	   // au_img:this.image,
-	        }
-	        this.Auth.login(newUser).subscribe(ok=>{this.message=ok["_body"];
-	    });   
-    }
+   
 
 
 }

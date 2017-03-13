@@ -2,12 +2,12 @@
 <form (submit)="addUser()" >
   <hr>
   <label>
-    <span>Full name</span>
+    <span>User name</span>
     <input
       type="text"
-      name="name"
-      placeholder="Your full name"
-      [(ngModel)]="fullname">
+      name="username"
+      placeholder="Your user name"
+      [(ngModel)]="username">
 
   </label>
   <div>
@@ -19,13 +19,7 @@
         placeholder="Your email address"
         [(ngModel)]="email">
     </label>
-    <label>
-      <span>Confirm address</span>
-      <input
-        type="email"
-        name="confirm"
-        placeholder="Confirm your email address">
-    </label>
+    
     <label>
       <span>Password</span>
       <input
