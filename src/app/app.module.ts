@@ -9,7 +9,10 @@ import { NavComponent } from './nav/nav.component';
 import { AdvertsComponent } from './adverts/adverts.component';
 import { FooterComponent } from './footer/footer.component';
 import { AddservService } from './addserv.service';
-
+import { AuthService } from './auth.service';
+import { LoginComponent } from './login/login.component';
+import { BaseRequestOptions } from '@angular/http';
+import { SignupComponent } from './signup/signup.component';
 const ROUTES = [
   {
     path: '',
@@ -19,6 +22,14 @@ const ROUTES = [
   {
     path: 'Adds',
     component: AdvertsComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
   }
 ];
 @NgModule({
@@ -26,7 +37,9 @@ const ROUTES = [
     AppComponent,
     NavComponent,
     AdvertsComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +47,7 @@ const ROUTES = [
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [AddservService,{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [AuthService,AddservService,{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
