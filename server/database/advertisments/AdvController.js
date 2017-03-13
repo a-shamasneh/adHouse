@@ -26,5 +26,16 @@ module.exports = {
       }
 
     })
+  },
+  // get advs
+  getall:function(req,res){
+    Adv.find({},function(err,adds){
+      if(err){
+        res.json(err)
+      }else{
+        res.json(adds)
+      }
+
+    })
   }
 };

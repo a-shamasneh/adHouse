@@ -6,12 +6,18 @@ module.exports = function (app, express) {
 		app.post('/api/addserv',AdvController.Addserv);
 
 
+
 /*								user route									 */
 //=============================================================================
 
 		app.post('/api/signin', UserController.signin);
 		app.post('/api/signup',UserController.signup);
   		app.get('/api/signedin', UserController.checkAuth);
+
+	
+		app.get('/api/adds/getall',AdvController.getall);
+		
+
 		
 };
 
