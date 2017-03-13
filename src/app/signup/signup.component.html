@@ -1,0 +1,42 @@
+<div class="col-md-6 col-md-offset-3">
+<form (submit)="addUser()" >
+  <hr>
+  <label>
+    <span>Full name</span>
+    <input
+      type="text"
+      name="name"
+      placeholder="Your full name"
+      [(ngModel)]="fullname">
+
+  </label>
+  <div>
+    <label>
+      <span >Email address</span>
+      <input
+        type="email"
+        name="email"
+        placeholder="Your email address"
+        [(ngModel)]="email">
+    </label>
+    <label>
+      <span>Confirm address</span>
+      <input
+        type="email"
+        name="confirm"
+        placeholder="Confirm your email address">
+    </label>
+    <label>
+      <span>Password</span>
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter your password"
+        [(ngModel)]="password"
+        >
+    </label>
+  </div>
+  {{message}}
+  <button type="submit">Sign up</button>
+</form>
+</div>
