@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ChangeDetectorRef} from '@angular/core';
 import { AddservService } from '../addserv.service';
 @Component({
   selector: 'app-adverts',
@@ -13,11 +13,47 @@ export class AdvertsComponent implements OnInit {
 	 image:string;
 	 phone:string;
 
-  constructor(private Adds:AddservService) {
+  constructor(private Adds:AddservService,private changeDetectorRef: ChangeDetectorRef) {
    }
 
   ngOnInit() {
   }
+  
+
+  // upload image start
+  	fileChange(input){
+    this.readFiles(input.files);
+  }
+  readFile(file, reader, callback){
+    // Set a callback funtion to fire after the file is fully loaded
+    reader.onload = () => {
+      // callback with the results
+      callback(reader.result);
+    }
+    
+    // Read the file
+    reader.readAsDataURL(file);
+  }
+  readFiles(files){
+    // Create the file reader
+    let reader = new FileReader();
+    
+    // If there is a file
+    if (files[0]){
+      // Start reading this file
+      this.readFile(files[0], reader, (result) =>{
+        // Create an img element and add the image file data to it
+      this.image=result;
+        
+       
+       
+      });
+    }else{
+      // When all files are done This forces a change detection
+      this.changeDetectorRef.detectChanges();
+    }
+  }
+  // upload image end 
 
 	 addServ(){
         
