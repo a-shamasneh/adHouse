@@ -7,10 +7,11 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
+
     model: any = {};
     loading = false;
-    returnUrl: string;
+    
     
 }
 
