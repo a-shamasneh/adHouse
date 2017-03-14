@@ -1,5 +1,6 @@
 import { Component, OnInit,ChangeDetectorRef} from '@angular/core';
 import { AddservService } from '../addserv.service';
+
 @Component({
   selector: 'app-adverts',
   templateUrl: './adverts.component.html',
@@ -12,8 +13,14 @@ export class AdvertsComponent implements OnInit {
 	 location:string;
 	 image:string;
 	 phone:string;
-
+   id:string;
   constructor(private Adds:AddservService,private changeDetectorRef: ChangeDetectorRef) {
+     if(!localStorage.getItem("com.addhouse")){
+      window.location.href=("")
+    }
+   this.id=localStorage.getItem("id");
+   console.log(this.id);
+
    }
 
   ngOnInit() {
@@ -23,6 +30,7 @@ export class AdvertsComponent implements OnInit {
   // upload image start
   	fileChange(input){
     this.readFiles(input.files);
+
   }
   readFile(file, reader, callback){
     // Set a callback funtion to fire after the file is fully loaded
@@ -62,7 +70,8 @@ export class AdvertsComponent implements OnInit {
     ad_loc:this.location,
     ad_desc:this.desc,
     ad_img:this.image,
-    ad_phone:this.phone
+    ad_phone:this.phone,
+    ad_uid:JSON.parse(this.id)
         }
         this.Adds.Addserv(newAd).subscribe(ok=>{console.log(ok)});
          

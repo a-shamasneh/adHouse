@@ -9,7 +9,19 @@ export class NavComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
+  }
+  	auth(){
+  	if(!localStorage.getItem("com.addhouse")){
+  		return false
+  	}else{
+  		return true
+  	}
+  	}
+  logout(){
+  	localStorage.clear();
+  	window.location.href=("")
   }
 
 }

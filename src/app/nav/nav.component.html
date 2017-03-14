@@ -1,26 +1,26 @@
 <div class="container">
   <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-  <a class="navbar-brand" href="#">Angular Styling Bootstrap</a>
-  <ul class="nav navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-      <a [routerLink]="['Adds']">Add New </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Contact</a>
-    </li>
-  </ul>
+  <a class="navbar-brand" [routerLink]="['']">Home</a>
   <ul class="nav navbar-nav">
     <li class="nav-item">
-      <a [routerLink]="['login']">Sign in </a>
+      <a  class="navbar-brand"  *ngIf="auth()" [routerLink]="['Adds']">Add New </a>
     </li>
     <li class="nav-item">
-      <a [routerLink]="['signup']">Sign up </a>
+      <a  class="navbar-brand" href="#" *ngIf="auth()" >Profile</a>
     </li>
+    
   </ul>
+  
   <ul class="nav navbar-nav pull-right">
+  <li class="nav-item">
+      <a class="nav-link" *ngIf="auth()" (click)="logout()" href="#">Log out</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" *ngIf="!auth()" [routerLink]="['login']">Sign in </a>
+    </li>
+    <li class="nav-item">
+      <a  class="nav-link"   *ngIf="!auth()" [routerLink]="['signup']">Sign up </a>
+    </li>
     <li class="nav-item">
       <a class="nav-link" href="https://twitter.com/@beeman_nl"><i class="fa fa-twitter" aria-hidden="true"></i></a>
     </li>
@@ -31,4 +31,7 @@
 </nav>
   
 </div>
+
+
+
 

@@ -8,6 +8,7 @@ module.exports = {
     var desc=req.body.ad_desc;
     var phone=req.body.ad_phone;
     var img=req.body.ad_img;
+    var Uid=req.body.ad_uid;
     var approve=false;
      console.log(req.body)
     Adv.create({
@@ -17,6 +18,7 @@ module.exports = {
     ad_img:img,
     ad_approve:approve,
     ad_phone:phone,
+    ad_uid:Uid,
     },function(err,ok){
       if(err){
         res.json(err);

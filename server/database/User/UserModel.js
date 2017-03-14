@@ -11,7 +11,8 @@ var UserSchema = new mongoose.Schema({
     required: true
   },
   salt: String,
-  email:String
+  email:String,
+  date:{type:Date,default:Date.now}
 });
 
 
