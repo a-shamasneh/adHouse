@@ -7,7 +7,10 @@ var adverts= new mongo.Schema({
     ad_date:{type:Date,default:Date.now},
     ad_approve:Boolean,
     ad_phone:String,
-    ad_uid:String
+    ad_uid:{
+       type: mongo.Schema.Types.ObjectId,
+       ref: 'users'
+   }
 });
 var adv = mongo.model('adverts',adverts)
 module.exports=adv

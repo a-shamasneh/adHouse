@@ -17,6 +17,7 @@ import { SignupComponent } from './signup/signup.component';
 
 import { HomeComponent } from './home/home.component';
 import { GetaddService } from './getadd.service';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const ROUTES = [
@@ -26,6 +27,7 @@ const ROUTES = [
   },
   {
     path: 'Adds',
+    
     component: AdvertsComponent
   },
   {
@@ -47,7 +49,9 @@ const ROUTES = [
     LoginComponent,
     SignupComponent,
 
-    HomeComponent
+    HomeComponent,
+
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
