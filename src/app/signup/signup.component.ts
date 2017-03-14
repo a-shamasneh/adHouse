@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import 'rxjs/add/operator/map';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -9,7 +10,7 @@ export class SignupComponent {
 	 username:string;
 	 email: string;
 	 password:string;
-	 message:string;
+	 message:any;
   constructor(private Auth:AuthService) {
    }
 
@@ -22,7 +23,7 @@ export class SignupComponent {
 	    password:this.password
 	    
 	        }
-	        this.Auth.signup(newUser).subscribe(ok=>{this.message=ok["_body"];
+	        this.Auth.signup(newUser).subscribe(ok=>{console.log(ok);
 	       this.username = '';
 	       this.email = ''; 
 	       this.password ='';

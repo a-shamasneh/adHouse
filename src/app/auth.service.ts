@@ -10,7 +10,12 @@ export class AuthService {
 
   signup(data){
   console.log(data);
-        return this.http.post('/api/signup',data);
-    };
+        return this.http.post('/api/signup',data).map(resp=>{return resp.json()});
+    }
+
+    signin(data){
+
+      return this.http.post('/api/signin',data).map(resp=>{return resp.json()})
+    }
   
 }

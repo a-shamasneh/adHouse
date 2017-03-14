@@ -9,7 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { AdvertsComponent } from './adverts/adverts.component';
 import { FooterComponent } from './footer/footer.component';
 import { AddservService } from './addserv.service';
-
+import { LocalStorageModule } from 'angular-2-local-storage';
 import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
 
@@ -53,6 +53,10 @@ const ROUTES = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    LocalStorageModule.withConfig({
+            prefix: 'app-root',
+            storageType: 'localStorage',
+        }),
     RouterModule.forRoot(ROUTES)
   ],
 

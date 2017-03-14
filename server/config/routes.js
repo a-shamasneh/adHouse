@@ -4,7 +4,7 @@ module.exports = function (app, express) {
 /*								Advertisment route									 */
 //=============================================================================
 		app.post('/api/addserv',AdvController.Addserv);
-
+		app.get('/api/adds/getall',AdvController.getall);
 
 
 /*								user route									 */
@@ -12,10 +12,7 @@ module.exports = function (app, express) {
 
 		app.post('/api/signin', UserController.signin);
 		app.post('/api/signup',UserController.signup);
-  		app.get('/api/signedin', UserController.checkAuth);
-
-	
-		app.get('/api/adds/getall',AdvController.getall);
+		
 		
 
 		
