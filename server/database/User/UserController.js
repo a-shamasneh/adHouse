@@ -30,7 +30,6 @@ module.exports = {
       }
     })
   },
-
   signup: function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
@@ -64,17 +63,15 @@ module.exports = {
                 }
               }
             })
-
           
         }else{
           res.json("user already exist")
         }
       }
-
      })
     // check to see if user already exists
    
   },
-
   
 };
+
