@@ -43,7 +43,7 @@
      <div class="col-md-4"></div>
     <div class="col-md-4 titlesign">
     
-      <h2>Please Sign Up</h2>
+      <h2 class="hsign">Please Sign Up</h2>
       </div>
       <div class="col-md-4"></div>
       </div>
@@ -90,7 +90,7 @@
         <div class="col-xs-12 col-md-6">
         <button 
         class="btn btn-success btn-block btn-lg" type="submit">Sign In</button>
-         <h3><span class="label label-danger">{{message}}</span></h3>
+         <h3><span class="error" *ngIf="message">{{message}}!!</span></h3>
          <hr class="colorgraph">
         </div>
         <div class="col-md-3"></div>
