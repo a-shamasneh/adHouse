@@ -1,4 +1,4 @@
-const app = require('../server.js')
+const app = require('../../../server.js')
 const request = require('supertest')
 const expect = require('chai').expect
 
@@ -8,13 +8,14 @@ describe('users', function () {
     request(app)
         .post('/api/signup')
         .send([{
-              "username":"soso",
-              "email":"soso@hotmai.com"
+              "username":"fofo",
+              "password":"1111",
+              "email":"fofo@hotmai.com"
               }
               ])
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .expect(201)
+      .expect(200)
       .end(function (err, resp) {
         if (err) {
           console.log(err)
@@ -23,28 +24,89 @@ describe('users', function () {
         done()
       })
   })
-
-  it('Should get one user', function (done) {
+    it('Should retrive wrong password', function (done) {
     request(app)
-      .post('/api/:username')
-      .send([{
-              "username":"roro"
+        .post('/api/signin')
+        .send([{
+              "username":"fofo",
+              "password":"1222",
+              "email":"fofo@hotmai.com"
               }
               ])
       .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
       .end(function (err, resp) {
         if (err) {
           console.log(err)
         }
-        var user = resp.body
-        request(app)
-          .get('/api/:username' + user.username)
+        expect(resp.body).to.be.an('string')
+        done()
+      })
+  })
+    it('Should retrive this user already exisits ', function (done) {
+    request(app)
+        .post('/api/signup')
+        .send([{
+              "username":"fofo",
+              "password":"1222",
+              "email":"fofo@hotmai.com"
+              }
+              ])
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .end(function (err, resp) {
+        if (err) {
+          console.log(err)
+        }
+        expect(resp.body).to.be.an('object')
+        expect(resp.body).to.have.property('errors')
+        done()
+      })
+  })
+    it('Should retrive wrong username', function (done) {
+    request(app)
+        .post('/api/signin')
+        .send([{
+              "username":"meme",
+              "password":"1111",
+              "email":"fofo@hotmai.com"
+              }
+              ])
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .end(function (err, resp) {
+        if (err) {
+          console.log(err)
+        }
+        expect(resp.body).to.be.an('string')
+        done()
+      })
+  })
+  it('Should retrive token as response ', function (done) {
+    request(app)
+      .post('/api/signin')
+      .send([{
+              "username":"fofo",
+              "password":"1111"
+              }
+              ])
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .end(function (err, resp) {
+        if (err) {
+          console.log(err)
+        }
+        expect(resp.body).to.be.an('object')
+        expect(resp.body).to.have.property('token')
+        done()
           .end(function (err, resp) {
             if (err) {
               throw new Error(err)
             }
-            expect(resp.body.user.username).to.equal('roro')
-            done()
           })
       })
       done()

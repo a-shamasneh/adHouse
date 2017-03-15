@@ -44,8 +44,11 @@ module.exports = {
       else{
         if(data.length===0){
             utils.hashpass(password,function(hash){
-             password=hash});
-          User.create({username:username,password:password,email:email},function(err,data){
+             password = hash
+           });
+          User.create({username:username,password:utils.hashpass(password,function(hash){
+             password = hash
+           }),email:email},function(err,data){
             if(err){
               res.json(err)
             }

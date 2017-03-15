@@ -1,8 +1,6 @@
 var Adv = require('./AdvModel.js');
 module.exports = {
   Addserv:function(req,res){
-    console.log(req.body)
-    console.log("im here")
   	var category=req.body.ad_cat;
   	var location=req.body.ad_loc;
     var desc=req.body.ad_desc;
@@ -10,7 +8,6 @@ module.exports = {
     var img=req.body.ad_img;
     var Uid=req.body.ad_uid;
     var approve=false;
-     console.log(req.body)
     Adv.create({
     ad_cat:category,
     ad_loc:location,
