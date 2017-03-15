@@ -18,6 +18,7 @@ import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { GetaddService } from './getadd.service';
 import { ProfileComponent } from './profile/profile.component';
+import { userDataService } from './userdata.service';
 
 
 const ROUTES = [
@@ -37,6 +38,10 @@ const ROUTES = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   }
 ];
 @NgModule({
@@ -65,7 +70,7 @@ const ROUTES = [
   ],
 
 
-  providers: [AddservService,GetaddService,{ provide: LocationStrategy, useClass: HashLocationStrategy }, AuthService],
+  providers: [AddservService,GetaddService,userDataService,{ provide: LocationStrategy, useClass: HashLocationStrategy }, AuthService],
 
   bootstrap: [AppComponent]
 })

@@ -35,7 +35,8 @@ module.exports = {
     var username = req.body.username;
     var password = req.body.password;
     var email=req.body.email;
-     
+     utils.hashpass(password,function(hash){
+             password=hash});
    
      User.find({username:username},function(err,data){
       if(err){
@@ -43,12 +44,13 @@ module.exports = {
       }
       else{
         if(data.length===0){
-            utils.hashpass(password,function(hash){
-             password = hash
-           });
-          User.create({username:username,password:utils.hashpass(password,function(hash){
-             password = hash
-           }),email:email},function(err,data){
+            User.find({email:email},function(err,data){
+              if(err){
+                res.json(err)
+              }
+              else{
+                if(data.length===0){
+                  User.create({username:username,password:password,email:email},function(err,data){
             if(err){
               res.json(err)
             }
@@ -56,6 +58,14 @@ module.exports = {
               res.json(data)
             }
           })
+                }
+                else{
+                  res.json("email already exist")
+                }
+              }
+            })
+
+          
         }else{
           res.json("user already exist")
         }
@@ -65,6 +75,15 @@ module.exports = {
     // check to see if user already exists
    
   },
-
-  
+  getUser :function (req,res) {
+    var userId = req.body._id;
+     User.findOne({id:userId},function(err,data){
+      if (err) {
+        throw err
+      }
+      console.log(data)
+      res.json(data)
+     })
+  }
 };
+
