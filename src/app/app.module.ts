@@ -17,6 +17,7 @@ import { SignupComponent } from './signup/signup.component';
 
 import { HomeComponent } from './home/home.component';
 import { GetaddService } from './getadd.service';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -49,7 +50,9 @@ const ROUTES = [
     LoginComponent,
     SignupComponent,
 
-    HomeComponent
+    HomeComponent,
+
+    AdminComponent
 
     
   ],
