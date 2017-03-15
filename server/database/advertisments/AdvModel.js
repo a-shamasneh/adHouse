@@ -4,7 +4,7 @@ var adverts= new mongo.Schema({
     ad_loc:String,
     ad_desc:String,
     ad_img:String,
-    ad_date:{type:Date,default:Date.now},
+    ad_date:{type:Date},
     ad_approve:Boolean,
     ad_phone:String,
     ad_uid:{

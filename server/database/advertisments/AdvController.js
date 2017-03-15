@@ -24,7 +24,7 @@ module.exports = {
         res.json(err);
       }
       else{
-        res.json("add succsees full!!")
+        res.json("Your Add has been uploaded waiting for approve")
       }
 
     })
