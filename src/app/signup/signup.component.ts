@@ -24,9 +24,13 @@ export class SignupComponent {
 	    
 	        }
 	        this.Auth.signup(newUser).subscribe(ok=>{console.log(ok);
-	       this.username = '';
-	       this.email = ''; 
-	       this.password ='';
+	       if(typeof(ok)=="string"){
+  				
+  			this.message=ok
+  		}
+  		else{
+  			window.location.href=("/#login")
+  		}
 	    });   
     };
    
