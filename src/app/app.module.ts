@@ -17,8 +17,12 @@ import { SignupComponent } from './signup/signup.component';
 
 import { HomeComponent } from './home/home.component';
 import { GetaddService } from './getadd.service';
+<<<<<<< HEAD
 import { ProfileComponent } from './profile/profile.component';
 import { userDataService } from './userdata.service';
+=======
+
+>>>>>>> 7a2a066e461f68ba2b873eb889a7f0fd1a56f378
 
 
 const ROUTES = [
@@ -54,9 +58,9 @@ const ROUTES = [
     LoginComponent,
     SignupComponent,
 
-    HomeComponent,
+    HomeComponent
 
-    ProfileComponent
+    
   ],
   imports: [
     BrowserModule,
