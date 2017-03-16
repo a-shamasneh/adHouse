@@ -19,7 +19,7 @@ module.exports = {
           utils.comparePass(password,data[0].password,function(ok){
             if(ok){
               var token=jwt.encode(data[0],'user');
-              res.json({token:token, id:data[0]._id})
+              res.json({token:token, id:data[0]._id,Admin:data[0].admin})
             }
             else{
               res.json("password wrong")
@@ -34,7 +34,9 @@ module.exports = {
     var username = req.body.username;
     var password = req.body.password;
     var email=req.body.email;
-    var image = '../image/user-man.png';
+    var image ='http://www.careerpilot.org.uk/images/profile-icon-lrg.png';
+    var admin=true;
+    var date=new Date().toUTCString().substr(0,16);
      utils.hashpass(password,function(hash){
              password=hash});
    
@@ -50,12 +52,13 @@ module.exports = {
               }
               else{
                 if(data.length===0){
-                  User.create({username:username,password:password,email:email,image:image},function(err,data){
+                  User.create({username:username,password:password,email:email,image:image,Admin:admin,date:date},function(err,data){
             if(err){
               res.json(err)
             }
             else{
-              res.json(data)
+              var ok="ok"
+              res.json({ok:ok})
             }
           })
                 }

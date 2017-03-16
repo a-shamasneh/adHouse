@@ -9,7 +9,7 @@ export class ProfileComponent implements OnInit {
 date:any;
 email:any;
 username:any;
-image:any;
+image:string;
 
 id:any;
   constructor(private user:userDataService) { 
@@ -21,6 +21,7 @@ id:any;
          this.date = ok.date;
          this.username = ok.username;
          this.image = ok.image;
+         
 			  	})
 
   }

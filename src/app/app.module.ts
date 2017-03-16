@@ -12,26 +12,13 @@ import { AddservService } from './addserv.service';
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
-
 import { SignupComponent } from './signup/signup.component';
 import { GetaddService } from './getadd.service'
 import { HomeComponent } from './home/home.component';
-
-
 import { AdminComponent } from './admin/admin.component';
-
-
-
-
-
-
 import { ProfileComponent } from './profile/profile.component';
 import { userDataService } from './userdata.service';
-
-
-
-
-
+import  {AdminService} from './admin.service';
 
 
 const ROUTES = [
@@ -55,7 +42,12 @@ const ROUTES = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: 'Admin',
+    component: AdminComponent
   }
+  
 ];
 @NgModule({
   declarations: [
@@ -89,7 +81,7 @@ const ROUTES = [
   ],
 
 
-  providers: [AddservService,GetaddService,userDataService,{ provide: LocationStrategy, useClass: HashLocationStrategy }, AuthService],
+  providers: [AdminService,AddservService,GetaddService,userDataService,{ provide: LocationStrategy, useClass: HashLocationStrategy }, AuthService],
 
   bootstrap: [AppComponent]
 })
