@@ -63,7 +63,6 @@ module.exports = {
                 }
               }
             })
-          
         }else{
           res.json("user already exist")
         }
@@ -72,6 +71,15 @@ module.exports = {
     // check to see if user already exists
    
   },
-  
+  getUser :function (req,res) {
+    var userId = req.body._id;
+     User.findOne({id:userId},function(err,data){
+      if (err) {
+        throw err
+      }
+      console.log(data)
+      res.json(data)
+     })
+  }
 };
 
