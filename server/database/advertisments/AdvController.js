@@ -10,6 +10,20 @@ module.exports = {
     var approve=false;
     var date=new Date().toUTCString().substr(0,16);
     Adv.create({
+      ad_cat:category,
+      ad_loc:location,
+      ad_desc:desc,
+      ad_img:img,
+      ad_approve:approve,
+      ad_phone:phone,
+      ad_uid:Uid,
+    },function(err,ok){
+       if(err){
+          res.json(err);
+        }
+       else{
+        res.json("add succsees full!!")
+       }
     ad_cat:category,
     ad_loc:location,
     ad_desc:desc,
@@ -38,5 +52,15 @@ module.exports = {
       }
 
     })
+  },
+  getAllById:function(req,res){
+    var userId = req.body._id;
+     Adv.find({id:userId},function(err,data){
+        if (err) {
+          throw err
+        }
+        console.log(data)
+        res.json(data)
+       })
   }
 };
