@@ -1,20 +1,71 @@
 <div class="container clear">
-	<h1>home work</h1>
-	<div *ngFor="let ad of alladds">
-        <div class="col-md-1">
-            <input type="checkbox">
-        </div>
-        <div class="col-md-7">
-            {{ad._id}}&nbsp;  {{ad.ad_approve}} <br>
-            {{ad.ad_date}}&nbsp;  {{ad.ad_cat}}<br>
-            {{ad.ad_loc}}&nbsp;  {{ad.ad_desc}}<br>
-            {{ad.ad_phone}}<br>
-           <img src="{{ad.ad_img}}">
+<br>
+	<h3 class= "header">
+    <span class ="header1" >AdHouse 
+    </span>
+    <span class = "header2" >One place all your needs
+    </span>
+    </h3>
+    <div class="dropdown">
+      <button class="dropbtn">Dropdown</button>
+      <div class="dropdown-content">
+      <a href="#">Careers</a>
+        <a href="#">Cars</a>
+        <a href="#">Furniture</a>
+        <a href="#">Electronics</a>
+        <a href="#">Others</a>
+    </div>
+</div>
+    <hr>
+	<div>
+        <div 
+         *ngFor="let ad of alladds">
+            <div class="col-md-3">
+
+             <img class="img-responsive" src="{{ad.ad_img}}" alt="">
+        <p>
+            
+            {{ad.ad_date}}&nbsp; 
+            <br> 
+            Category : {{ad.ad_cat}}<br>
+            Location : {{ad.ad_loc}}&nbsp;
+            <br>
+            Description :  {{ad.ad_desc}}
+            <br>
+            Contact : {{ad.ad_phone}}<br>
+        </p>
 
         </div> 
-        <div class="col-md-4">
-            <input type="button" (click)="deletemov(task._id)" value="Delete" class="btn btn-danger">    
         </div>
-        <br><br>
+
+       <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
     </div>
 </div>
