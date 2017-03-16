@@ -1,3 +1,25 @@
-<p>
-  admin works!
-</p>
+
+  <div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Phone</th>
+        <th>option</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let add of Adds">
+      <tr>
+        <td><img src="{{add.ad_img}}" class="img-responsive"></td>
+        <td>{{add.ad_desc}}</td>
+        <td>{{add.ad_phone}}</td>
+        <td>
+	        <button class="btn btn-danger btn-sm" (click)="Reject(add._id)">Reject</button> 
+			<button class="btn btn-success btn-sm" (click)="Approve(add._id)">Approve</button>
+		</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
