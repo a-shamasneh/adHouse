@@ -16,12 +16,18 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { GetaddService } from './getadd.service'
 import { HomeComponent } from './home/home.component';
-import { GetaddService } from './getadd.service';
+
 
 import { AdminComponent } from './admin/admin.component';
 
+
+
+
+
+
 import { ProfileComponent } from './profile/profile.component';
 import { userDataService } from './userdata.service';
+
 
 
 
