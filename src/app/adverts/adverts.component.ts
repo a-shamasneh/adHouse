@@ -7,7 +7,7 @@ import { AddservService } from '../addserv.service';
   styleUrls: ['./adverts.component.css']
 })
 export class AdvertsComponent implements OnInit {
-	 
+	 message:string;
 	 desc:string;
 	 category: string;
 	 location:string;
@@ -73,8 +73,9 @@ export class AdvertsComponent implements OnInit {
     ad_phone:this.phone,
     ad_uid:JSON.parse(this.id)
         }
-        this.Adds.Addserv(newAd).subscribe(ok=>{console.log(ok)});
-         
-        
+        this.Adds.Addserv(newAd).subscribe(ok=>{console.log(ok);
+          this.message="Your Add has been uploaded waiting for approve";
+          
+        });
     }
 }
