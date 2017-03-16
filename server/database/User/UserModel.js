@@ -3,8 +3,9 @@ var UserSchema = new mongoose.Schema({
   username:String,
   password: String,
   email:String,
-  date:{type:Date,default:Date.now},
-  image: String
+  date:String,
+  image: String,
+  Admin:Boolean,
 
 });
 
