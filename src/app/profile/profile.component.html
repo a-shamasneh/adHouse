@@ -12,3 +12,56 @@
          <p>Last Update: {{date}}</p>
      </div>    
 </div>
+<hr>
+<hr>
+<div>
+        <div 
+         *ngFor="let ad of adv">
+            <div class="col-md-3">
+
+             <img class="img-responsive" src="{{ad.ad_img}}" alt="">
+        <p>
+            
+            {{ad.ad_date}}&nbsp; 
+            <br> 
+            Category : {{ad.ad_cat}}<br>
+            Location : {{ad.ad_loc}}&nbsp;
+            <br>
+            Description :  {{ad.ad_desc}}
+            <br>
+            Contact : {{ad.ad_phone}}<br>
+        </p>
+
+        </div> 
+        </div>
+
+       <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>

@@ -5,6 +5,9 @@ import 'rxjs/add/operator/map';
 export class userDataService {
   constructor(private http:Http) { }
   profile(id){
-  	return this.http.get('/api/getUser/'+id).map(res=>res.json())}	
-    
+  	return this.http.get('/api/getUser/'+id).map(res=>res.json())
+  }	
+  getAdv(id){
+  	return this.http.get('/api/adds/'+id).map(res=>res.json())
+  }  
 }
