@@ -34,6 +34,7 @@ module.exports = {
     var username = req.body.username;
     var password = req.body.password;
     var email=req.body.email;
+    var image = '../image/user-man.png';
      utils.hashpass(password,function(hash){
              password=hash});
    
@@ -49,7 +50,7 @@ module.exports = {
               }
               else{
                 if(data.length===0){
-                  User.create({username:username,password:password,email:email},function(err,data){
+                  User.create({username:username,password:password,email:email,image:image},function(err,data){
             if(err){
               res.json(err)
             }
