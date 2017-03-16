@@ -10,7 +10,7 @@ date:any;
 email:any;
 username:any;
 image:string;
-
+userAdv : any;
 id:any;
   constructor(private user:userDataService) { 
 
@@ -23,6 +23,9 @@ id:any;
          this.image = ok.image;
          
 			  	})
+      this.user.getAdv(this.id).subscribe( adv => {
+        this.userAdv = adv ;
+      })
 
   }
   ngOnInit() {

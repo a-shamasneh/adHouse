@@ -20,8 +20,7 @@ module.exports = {
     },function(err,ok){
        if(err){
           res.json(err);
-        }
-       
+        }       
       else{
         res.json("Your Add has been uploaded waiting for approve")
       }
