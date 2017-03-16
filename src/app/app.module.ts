@@ -14,9 +14,10 @@ import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
 
 import { SignupComponent } from './signup/signup.component';
-
+import { GetaddService } from './getadd.service'
 import { HomeComponent } from './home/home.component';
 import { GetaddService } from './getadd.service';
+
 import { ProfileComponent } from './profile/profile.component';
 import { userDataService } from './userdata.service';
 
@@ -56,7 +57,6 @@ const ROUTES = [
     SignupComponent,
 
     HomeComponent,
-
     ProfileComponent
 
     
