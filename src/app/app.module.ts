@@ -17,9 +17,23 @@ import { SignupComponent } from './signup/signup.component';
 import { GetaddService } from './getadd.service'
 import { HomeComponent } from './home/home.component';
 
+<<<<<<< HEAD
+=======
+
+import { AdminComponent } from './admin/admin.component';
+
+
+
+
+
+>>>>>>> b0bdbf29ac8148f36286c6c14ff853789f08d083
 
 import { ProfileComponent } from './profile/profile.component';
 import { userDataService } from './userdata.service';
+
+
+
+
 
 
 
@@ -57,7 +71,12 @@ const ROUTES = [
     SignupComponent,
 
     HomeComponent,
+
+
+    AdminComponent,
+
     ProfileComponent
+
 
     
   ],
