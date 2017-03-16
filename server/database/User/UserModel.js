@@ -4,6 +4,8 @@ var UserSchema = new mongoose.Schema({
   password: String,
   email:String,
   date:{type:Date,default:Date.now},
+  image: { data: Buffer, contentType: String }
+
 });
 
 

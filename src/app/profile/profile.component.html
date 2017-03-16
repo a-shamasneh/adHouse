@@ -1,17 +1,14 @@
-<div class="container clear">
-	<h1>Profile work</h1>
 
-        <div class="col-md-7">
-		<p>
-		  {{userdata.username}} 
-		</p>
-		  <p>
-		  {{userdata["email"]}}
-		  </p>
-		  <h3>Hello word</h3>
-
-
-        </div> 
-
-        <br><br>
+<div class="row">
+    <div class="col-md-2">
+        <img class="img-circle" style="width:100%" src="{{image}}">
+     </div>
+     <div class="col-md-10">
+     <hr>
+         <h1>{{username}}'s profile</h1>
+         <hr>
+         <p>Email: {{email}}</p>
+         <hr>
+         <p>Last Update: {{date}}</p>
+     </div>    
 </div>
