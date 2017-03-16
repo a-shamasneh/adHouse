@@ -15,7 +15,6 @@ module.exports = {
           res.json("username wrong")
         }
         else{
-          console.log(data[0].password)
           utils.comparePass(password,data[0].password,function(ok){
             if(ok){
               var token=jwt.encode(data[0],'user');
