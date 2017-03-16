@@ -20,23 +20,7 @@ module.exports = {
     },function(err,ok){
        if(err){
           res.json(err);
-        }
-       else{
-        res.json("add succsees full!!")
-       }
-    ad_cat:category,
-    ad_loc:location,
-    ad_desc:desc,
-    ad_img:img,
-    ad_approve:approve,
-    ad_phone:phone,
-    ad_uid:Uid,
-    ad_date:date,
-    },function(err,ok){
-      if(err){
-        res.json(err);
-      }
-      else{
+        }else{
         res.json("Your Add has been uploaded waiting for approve")
       }
 
