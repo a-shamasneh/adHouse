@@ -48,5 +48,51 @@ module.exports = {
         console.log(data)
         res.json(data)
        })
-  }
+  },
+ 
+  /////////admin////////
+  GetAdmin:function(req,res){
+    Adv.find({ad_approve:"false"},function(err,data){
+        if (err) {
+          throw err
+        }else{
+            res.json(data)
+        }
+        
+      
+       })
+  },
+  /// reject///
+    Reject:function(req,res){
+      console.log(req.body.id)
+       // res.json("Reject")
+       Adv.remove({_id:req.body.id},function(err,ok){
+        if(err){
+          res.json(err)
+        }
+        else{
+          res.json("deleted succesfully!!")
+        }
+       })
+
+    },
+
+  ///////
+  ///approve//
+  Approve:function(req,res){
+      console.log(req.body.id)
+      // res.json("approve")
+      Adv.update(
+        {_id:req.body.id},{ad_approve:true},function(err,ok){
+          if(err){
+            res.json(err)
+          }
+          else{
+            res.json("approved succeesfully!!")
+          }
+      })
+    }
+  ////
+
+
 };

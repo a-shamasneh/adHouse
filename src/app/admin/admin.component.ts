@@ -1,19 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminService} from '../admin.service';
-
-
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
+	Adds:any;
+	
   constructor(private Admin:AdminService) { 
-  	
+  		this.Admin.get().subscribe(ok=>{
+  			this.Adds=ok;
+  			console.log(this.Adds)
+  		})
   }
 
   ngOnInit() {
   }
+
+   Approve(id){
+   		this.Admin.Appr(id).subscribe(ok=>{
+    		console.log(ok)
+    	})
+    }
+    Reject(id){
+    	
+    	this.Admin.Rej(id).subscribe(ok=>{
+    		console.log(ok)
+    	})
+    }
 
 }
