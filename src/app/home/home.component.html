@@ -7,7 +7,8 @@
     </span>
     </h3>
  
-    <select [(ngModel)]="term" >
+    <select [(ngModel)]="term" [placeholder] = "Select your category" >
+   
   <option *ngFor="let cat of catgs ">{{cat}}</option>
 </select>
     <hr>
