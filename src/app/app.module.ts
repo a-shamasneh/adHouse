@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { AdvertsComponent } from './adverts/adverts.component';
@@ -15,10 +17,16 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { GetaddService } from './getadd.service'
 import { HomeComponent } from './home/home.component';
+
+import { CategoriesPipe } from './categories.pipe';
+
+
+
 import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { userDataService } from './userdata.service';
 import  {AdminService} from './admin.service';
+
 
 
 const ROUTES = [
@@ -64,7 +72,9 @@ const ROUTES = [
 
     AdminComponent,
 
-    ProfileComponent
+    ProfileComponent,
+
+    CategoriesPipe
 
 
     

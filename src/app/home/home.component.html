@@ -6,20 +6,56 @@
     <span class = "header2" >One place all your needs
     </span>
     </h3>
-    <div class="dropdown">
-      <button class="dropbtn">Dropdown</button>
-      <div class="dropdown-content">
-      <a href="#">Careers</a>
-        <a href="#">Cars</a>
-        <a href="#">Furniture</a>
-        <a href="#">Electronics</a>
-        <a href="#">Others</a>
-    </div>
-</div>
+   <!--  <ng-select
+    [options] = "catg"
+    [(ngModel)]="sel.value">
+    placeholder = "Select Category">
+    </ng-select> -->
+    
+<!-- <ng-select
+    [options]="categories"
+    [(ngModel)]="selectedCat">
+</ng-select>
+<button
+    (click)="selectedCat">
+
+</button>
+    <select (click)="selectedCat">
+  <option *ngFor="let cat of categories "></option>
+</select>
+ -->
+
+
+ <!-- <div>
+  <select #sel (change)="select.emit(sel.value)">
+    <option *ngFor="#cat of catg">{{cat}}</option>
+  </select> -->
+  <!-- <ul>
+    <li *ngFor="#ad of alladds | cat: sel.value">
+      {{todo.title}}
+    </li>
+  </ul> -->
+<!-- </div> -->
+   <!--  <div class="dropdown" >
+    
+  <button class="dropbtn">Categories</button>
+  <div class="dropdown-content" >
+    <a href="#">Careers</a>
+    <a href="#">Cars</a>
+    <a href="#">Furniture</a>
+    <a href="#">Electronics</a>
+    <a href="#">Other</a>
+  </div>
+</div> -->
+    <!-- <div>
+  <select #sel (change)="select.emit(sel.value)">
+    <option *ngFor="let cat of catg">{{cat}}</option>
+  </select>
+  </div> -->
     <hr>
 	<div>
         <div 
-         *ngFor="let ad of alladds">
+        *ngFor="let ad of alladds | categories: sel.value"  >
             <div class="col-md-3">
 
              <img class="img-responsive" src="{{ad.ad_img}}" alt="">
@@ -39,7 +75,7 @@
         </div>
 
        <!-- Pagination -->
-        <div class="row text-center">
+        <!-- <div class="row text-center">
             <div class="col-lg-12">
                 <ul class="pagination">
                     <li>
@@ -65,7 +101,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
         
     </div>
 </div>

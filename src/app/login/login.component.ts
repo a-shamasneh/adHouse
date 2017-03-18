@@ -26,6 +26,7 @@ constructor(private Auth:AuthService) {}
   			if(typeof(ok)!=="string"){
   				localStorage.setItem('com.addhouse',JSON.stringify(ok.token));
   			localStorage.setItem('id',JSON.stringify(ok.id));
+        window.location.href=("/#Adds")
   			this.message=ok.id
   		}else{
   			this.message=ok;
