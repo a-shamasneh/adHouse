@@ -29,7 +29,7 @@ module.exports = {
   },
   // get advs
   getall:function(req,res){
-    Adv.find({},function(err,adds){
+    Adv.find({ad_approve:true},function(err,adds){
       if(err){
         res.json(err)
       }else{
@@ -39,12 +39,13 @@ module.exports = {
     })
   },
   getAllById:function(req,res){
-    var userId = req.body._id;
-     Adv.find({id:userId},function(err,data){
+    console.log(req.params)
+    var userId = JSON.parse(req.params.userID);
+     Adv.find({ad_uid:userId},function(err,data){
         if (err) {
           throw err
         }
-        console.log(data)
+        // console.log(data)
         res.json(data)
        })
   },

@@ -2,9 +2,23 @@
 <div class="row">
     <div class="col-md-2">
         <img class="img-circle" style="width:100%" src="{{image}}">
+              <div class="row">
+      <div class="col-md-3"></div>
+        <div class="col-md-6">
+           <div class="form-group">
+          <input type="file"  (change)="fileChange(input)" #input  required accept="image/*" />
+           <button class="btn btn-success btn-block btn-lg" type="submit" (click)="changeImage()">Change</button>
+        </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
      </div>
      <div class="col-md-10">
      <hr>
+          <hr>
+     <hr>
+     <hr>
+
          <h1>{{username}}'s profile</h1>
          <hr>
          <p>Email: {{email}}</p>
@@ -15,13 +29,13 @@
 <hr>
 <hr>
 <div>
-        <div 
-         *ngFor="let ad of adv">
+        <div *ngFor="let ad of userAdv">
             <div class="col-md-3">
 
+            <ul>
+                    <li>
              <img class="img-responsive" src="{{ad.ad_img}}" alt="">
-        <p>
-            
+                        
             {{ad.ad_date}}&nbsp; 
             <br> 
             Category : {{ad.ad_cat}}<br>
@@ -30,38 +44,12 @@
             Description :  {{ad.ad_desc}}
             <br>
             Contact : {{ad.ad_phone}}<br>
-        </p>
+                <hr>
+                <hr>
+
+                    </li>               
+            </ul>
 
         </div> 
         </div>
-
-       <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        
     </div>

@@ -75,14 +75,27 @@ module.exports = {
    
   },
   getUser :function (req,res) {
-    var userId = req.body._id;
-     User.findOne({id:userId},function(err,data){
+    console.log(req.params)
+    var userId = JSON.parse(req.params._id);
+     User.findOne({_id:userId},function(err,data){
       if (err) {
         throw err
       }
       console.log(data)
       res.json(data)
      })
+  },
+  changImage: function (req,res) {
+    console.log(req.body)
+        User.update(
+        {_id:req.body._id},{image:req.body.image},function(err,ok){
+          if(err){
+            res.json(err)
+          }
+          else{
+            res.json("changed image  succeesfully!!")
+          }
+      })
   }
 };
 
