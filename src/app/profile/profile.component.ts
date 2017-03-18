@@ -9,8 +9,8 @@ export class ProfileComponent implements OnInit {
 date:any;
 email:any;
 username:any;
-image:any;
-
+image:string;
+userAdv : any;
 id:any;
   constructor(private user:userDataService) { 
 
@@ -21,7 +21,11 @@ id:any;
          this.date = ok.date;
          this.username = ok.username;
          this.image = ok.image;
+         
 			  	})
+      this.user.getAdv(this.id).subscribe( adv => {
+        this.userAdv = adv ;
+      })
 
   }
   ngOnInit() {

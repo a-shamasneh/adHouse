@@ -7,21 +7,20 @@ module.exports = {
     var phone=req.body.ad_phone;
     var img=req.body.ad_img;
     var Uid=req.body.ad_uid;
-    var approve=false;
+    var approve=0;
     var date=new Date().toUTCString().substr(0,16);
     Adv.create({
-    ad_cat:category,
-    ad_loc:location,
-    ad_desc:desc,
-    ad_img:img,
-    ad_approve:approve,
-    ad_phone:phone,
-    ad_uid:Uid,
-    ad_date:date,
+      ad_cat:category,
+      ad_loc:location,
+      ad_desc:desc,
+      ad_img:img,
+      ad_approve:approve,
+      ad_phone:phone,
+      ad_uid:Uid,
     },function(err,ok){
-      if(err){
-        res.json(err);
-      }
+       if(err){
+          res.json(err);
+        }       
       else{
         res.json("Your Add has been uploaded waiting for approve")
       }
@@ -38,5 +37,78 @@ module.exports = {
       }
 
     })
-  }
+  },
+  getAllById:function(req,res){
+    var userId = req.body._id;
+     Adv.find({id:userId},function(err,data){
+        if (err) {
+          throw err
+        }
+        console.log(data)
+        res.json(data)
+       })
+  },
+ 
+  /////////admin////////
+  Gadmin:function(req,res){
+    Adv.find({ad_approve:false},function(err,data){
+        if (err) {
+          res.json(err)
+        }else{
+
+            
+            res.json(data)
+        }
+        
+      
+       })
+    // Adv.find({ad_approve:false},function(err,data){
+    //   let dataRes
+    //   if(err){ 
+    //     res.json(err)}
+    //     else{
+    //       dataRes=data.filter(function(el){
+    //         if(el.ad_approve!==true){
+    //           return el
+    //         }
+    //       })
+    //       console.log("=====================")
+    //       //res.json(dataRes)
+    //     }
+    // })
+    console.log("++++++++++++++++++++++++++")
+  },
+  /// reject///
+    Reject:function(req,res){
+      console.log(req.body.id)
+       // res.json("Reject")
+       Adv.remove({_id:req.body.id},function(err,ok){
+        if(err){
+          res.json(err)
+        }
+        else{
+          res.json("deleted succesfully!!")
+        }
+       })
+
+    },
+
+  ///////
+  ///approve//
+  Approve:function(req,res){
+      console.log(req.body.id)
+      // res.json("approve")
+      Adv.update(
+        {_id:req.body.id},{ad_approve:1},function(err,ok){
+          if(err){
+            res.json(err)
+          }
+          else{
+            res.json("approved succeesfully!!")
+          }
+      })
+    }
+  ////
+
+
 };

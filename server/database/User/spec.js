@@ -7,15 +7,15 @@ describe('users', function () {
   it('Should create a new User', function (done) {
     request(app)
         .post('/api/signup')
-        .send([{
-              "username":"fofo",
-              "password":"1111",
-              "email":"fofo@hotmai.com"
+        .send({
+              "username":"jojo",
+              "password":"1234",
+              "email":"jojo@hotmail.com"
               }
-              ])
+              )
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .expect(200)
+      .expect(201)
       .end(function (err, resp) {
         if (err) {
           console.log(err)
@@ -28,9 +28,9 @@ describe('users', function () {
     request(app)
         .post('/api/signin')
         .send([{
-              "username":"fofo",
+              "username":"jojo",
               "password":"1222",
-              "email":"fofo@hotmai.com"
+              "email":"jojo@hotmail.com"
               }
               ])
       .set('Accept', 'application/json')
@@ -47,33 +47,12 @@ describe('users', function () {
     it('Should retrive this user already exisits ', function (done) {
     request(app)
         .post('/api/signup')
-        .send([{
-              "username":"fofo",
+        .send({
+              "username":"jojo",
               "password":"1222",
-              "email":"fofo@hotmai.com"
+              "email":"jojo@hotmail.com"
               }
-              ])
-      .set('Accept', 'application/json')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .end(function (err, resp) {
-        if (err) {
-          console.log(err)
-        }
-        expect(resp.body).to.be.an('object')
-        expect(resp.body).to.have.property('errors')
-        done()
-      })
-  })
-    it('Should retrive wrong username', function (done) {
-    request(app)
-        .post('/api/signin')
-        .send([{
-              "username":"meme",
-              "password":"1111",
-              "email":"fofo@hotmai.com"
-              }
-              ])
+              )
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200)
@@ -85,12 +64,13 @@ describe('users', function () {
         done()
       })
   })
+ 
   it('Should retrive token as response ', function (done) {
     request(app)
       .post('/api/signin')
       .send([{
-              "username":"fofo",
-              "password":"1111"
+              "username":"jojo",
+              "password":"1234"
               }
               ])
       .set('Accept', 'application/json')
