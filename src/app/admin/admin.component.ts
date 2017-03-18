@@ -21,12 +21,22 @@ export class AdminComponent implements OnInit {
    Approve(id){
    		this.Admin.Appr(id).subscribe(ok=>{
     		console.log(ok)
+    		for(var i=0;i<this.Adds.length;i++){
+    			if(this.Adds[i]._id){
+    				this.Adds.splice(i,1)
+    			}
+    		}
     	})
     }
     Reject(id){
     	
     	this.Admin.Rej(id).subscribe(ok=>{
     		console.log(ok)
+    		for(var i=0;i<this.Adds.length;i++){
+    			if(this.Adds[i]._id){
+    				this.Adds.splice(i,1)
+    			}
+    		}
     	})
     }
 

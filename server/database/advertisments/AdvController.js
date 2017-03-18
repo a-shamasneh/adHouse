@@ -51,18 +51,33 @@ module.exports = {
   },
  
   /////////admin////////
-  GetAdmin:function(req,res){
-    Adv.find({ad_approve:{$eq:0}},function(err,data){
+  Gadmin:function(req,res){
+    Adv.find({ad_approve:false},function(err,data){
         if (err) {
-          throw err
+          res.json(err)
         }else{
 
-
+            
             res.json(data)
         }
         
       
        })
+    // Adv.find({ad_approve:false},function(err,data){
+    //   let dataRes
+    //   if(err){ 
+    //     res.json(err)}
+    //     else{
+    //       dataRes=data.filter(function(el){
+    //         if(el.ad_approve!==true){
+    //           return el
+    //         }
+    //       })
+    //       console.log("=====================")
+    //       //res.json(dataRes)
+    //     }
+    // })
+    console.log("++++++++++++++++++++++++++")
   },
   /// reject///
     Reject:function(req,res){
