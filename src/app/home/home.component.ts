@@ -6,12 +6,23 @@ import { GetaddService } from '../getadd.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  categories: any;
 	alladds:any;
+  selectedCat :string;
   constructor(private Get:GetaddService) {
-  this.Get.getalladv().subscribe(ok=>this.alladds=ok);
+  this.Get.getalladv().subscribe(ok=>{
+    this.alladds=ok
+    console.log(this.alladds)
+  });
+
+  this.categories = ["careers", "cars", "furniture" ]    
+
    }
 
   ngOnInit() {
+    
+
+
   }
 
   

@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { AdvertsComponent } from './adverts/adverts.component';
@@ -17,22 +19,11 @@ import { SignupComponent } from './signup/signup.component';
 import { GetaddService } from './getadd.service'
 import { HomeComponent } from './home/home.component';
 
-<<<<<<< HEAD
-=======
-
 import { AdminComponent } from './admin/admin.component';
-
-
-
-
-
->>>>>>> b0bdbf29ac8148f36286c6c14ff853789f08d083
 
 import { ProfileComponent } from './profile/profile.component';
 import { userDataService } from './userdata.service';
-
-
-
+import { CategoriesPipe } from './categories.pipe';
 
 
 
@@ -75,7 +66,9 @@ const ROUTES = [
 
     AdminComponent,
 
-    ProfileComponent
+    ProfileComponent,
+
+    CategoriesPipe
 
 
     

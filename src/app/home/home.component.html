@@ -6,20 +6,39 @@
     <span class = "header2" >One place all your needs
     </span>
     </h3>
-    <div class="dropdown">
-      <button class="dropbtn">Dropdown</button>
-      <div class="dropdown-content">
-      <a href="#">Careers</a>
-        <a href="#">Cars</a>
-        <a href="#">Furniture</a>
-        <a href="#">Electronics</a>
-        <a href="#">Others</a>
-    </div>
+   <!--  <ng-select
+    [options] = "categories"
+    placeholder = "Select Category">
+    </ng-select> -->
+    
+<!-- <ng-select
+    [options]="categories"
+    [(ngModel)]="selectedCat">
+</ng-select>
+<button
+    (click)="selectedCat">
+
+</button>
+    <select (click)="selectedCat">
+  <option *ngFor="let cat of categories "></option>
+</select>
+ -->
+    <div class="dropdown" >
+    
+  <button class="dropbtn">Categories</button>
+  <div class="dropdown-content" >
+    <a href="#">Careers</a>
+    <a href="#">Cars</a>
+    <a href="#">Furniture</a>
+    <a href="#">Electronics</a>
+    <a href="#">Other</a>
+  </div>
 </div>
+    
     <hr>
 	<div>
         <div 
-         *ngFor="let ad of alladds">
+         *ngFor="let ad of alladds | categories : selectedCat "  >
             <div class="col-md-3">
 
              <img class="img-responsive" src="{{ad.ad_img}}" alt="">

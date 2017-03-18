@@ -17,7 +17,7 @@ require('./server/config/routes.js') (app,express);
 //=============================================================================
 /*									Server   								 */
 //=============================================================================
-	var port = process.env.PORT || 8990;
+	var port = process.env.PORT || 4000;
 	app.listen(port , function () {
 		console.log('...Server now listening on port ' + port);
 	});
