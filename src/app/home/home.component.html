@@ -1,63 +1,22 @@
 <div class="container clear">
 <br>
-	<h3 class= "header">
+    <h3 class= "header">
     <span class ="header1" >AdHouse 
     </span>
     <span class = "header2" >One place all your needs
     </span>
     </h3>
-   <!--  <ng-select
-    [options] = "catg"
-    [(ngModel)]="sel.value">
-    placeholder = "Select Category">
-    </ng-select> -->
-    
-<!-- <ng-select
-    [options]="categories"
-    [(ngModel)]="selectedCat">
-</ng-select>
-<button
-    (click)="selectedCat">
-
-</button>
-    <select (click)="selectedCat">
-  <option *ngFor="let cat of categories "></option>
+ 
+    <select [(ngModel)]="term" >
+  <option *ngFor="let cat of catgs ">{{cat}}</option>
 </select>
- -->
-
-
- <!-- <div>
-  <select #sel (change)="select.emit(sel.value)">
-    <option *ngFor="#cat of catg">{{cat}}</option>
-  </select> -->
-  <!-- <ul>
-    <li *ngFor="#ad of alladds | cat: sel.value">
-      {{todo.title}}
-    </li>
-  </ul> -->
-<!-- </div> -->
-   <!--  <div class="dropdown" >
-    
-  <button class="dropbtn">Categories</button>
-  <div class="dropdown-content" >
-    <a href="#">Careers</a>
-    <a href="#">Cars</a>
-    <a href="#">Furniture</a>
-    <a href="#">Electronics</a>
-    <a href="#">Other</a>
-  </div>
-</div> -->
-    <!-- <div>
-  <select #sel (change)="select.emit(sel.value)">
-    <option *ngFor="let cat of catg">{{cat}}</option>
-  </select>
-  </div> -->
     <hr>
-	<div>
+    <div>
         <div 
-        *ngFor="let ad of alladds "  >
-            <div class="col-md-3">
 
+        *ngFor="let ad of alladds | filter: term"  >
+
+            <div class="col-md-3">
              <img class="img-responsive" src="{{ad.ad_img}}" alt="">
         <p>
             
@@ -70,38 +29,8 @@
             <br>
             Contact : {{ad.ad_phone}}<br>
         </p>
-
         </div> 
         </div>
-
-       <!-- Pagination -->
-        <!-- <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div> -->
-        
+       
     </div>
 </div>

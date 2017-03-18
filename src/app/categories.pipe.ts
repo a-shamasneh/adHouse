@@ -1,13 +1,23 @@
 import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
-  name: 'categories'
+  name: 'filter'
 })
 export class CategoriesPipe implements PipeTransform {
 
-     transform(value: any, [catg]): any {
-        return value.filter((item) => item.ad_cat === catg);
-    }
+
+     transform(alladds: any, term?: any): any {
+
+   
+
+   if(term=== undefined) return alladds;
+   return alladds.filter(function(adv){
+       return adv.ad_cat.toLowerCase().includes(term.toLowerCase());
+   })
+ }
+
 }
+
+
 
 
 

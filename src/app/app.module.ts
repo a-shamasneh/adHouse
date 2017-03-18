@@ -29,6 +29,7 @@ import  {AdminService} from './admin.service';
 
 
 
+
 const ROUTES = [
   {
     path: '',
@@ -74,7 +75,9 @@ const ROUTES = [
 
     ProfileComponent,
 
-    CategoriesPipe
+    CategoriesPipe,
+
+    
 
 
     
