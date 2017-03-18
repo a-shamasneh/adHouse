@@ -7,7 +7,8 @@
     </span>
     </h3>
    <!--  <ng-select
-    [options] = "categories"
+    [options] = "catg"
+    [(ngModel)]="sel.value">
     placeholder = "Select Category">
     </ng-select> -->
     
@@ -23,7 +24,19 @@
   <option *ngFor="let cat of categories "></option>
 </select>
  -->
-    <div class="dropdown" >
+
+
+ <!-- <div>
+  <select #sel (change)="select.emit(sel.value)">
+    <option *ngFor="#cat of catg">{{cat}}</option>
+  </select> -->
+  <!-- <ul>
+    <li *ngFor="#ad of alladds | cat: sel.value">
+      {{todo.title}}
+    </li>
+  </ul> -->
+<!-- </div> -->
+   <!--  <div class="dropdown" >
     
   <button class="dropbtn">Categories</button>
   <div class="dropdown-content" >
@@ -33,12 +46,16 @@
     <a href="#">Electronics</a>
     <a href="#">Other</a>
   </div>
-</div>
-    
+</div> -->
+    <!-- <div>
+  <select #sel (change)="select.emit(sel.value)">
+    <option *ngFor="let cat of catg">{{cat}}</option>
+  </select>
+  </div> -->
     <hr>
 	<div>
         <div 
-         *ngFor="let ad of alladds | categories : selectedCat "  >
+        *ngFor="let ad of alladds | categories: sel.value"  >
             <div class="col-md-3">
 
              <img class="img-responsive" src="{{ad.ad_img}}" alt="">
@@ -58,7 +75,7 @@
         </div>
 
        <!-- Pagination -->
-        <div class="row text-center">
+        <!-- <div class="row text-center">
             <div class="col-lg-12">
                 <ul class="pagination">
                     <li>
@@ -84,7 +101,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
         
     </div>
 </div>
