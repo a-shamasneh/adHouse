@@ -3,16 +3,20 @@ import {GetaddService } from '../getadd.service';
 import {CategoriesPipe} from '../categories.pipe';
 
 @Component({
+  moduleId:module.id,
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
+
   
   
 })
 export class HomeComponent implements OnInit {
   //pipes///
   
-  catg:any = ["Careers","Cars","Furniture","Electronics","Other"];
+  catgs:any = ["careers","cars","furniture","electronic","Other"];
+   
+
   ///////////
 	alladds:any;
   constructor(private Get:GetaddService) {
