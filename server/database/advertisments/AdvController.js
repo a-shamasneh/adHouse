@@ -7,7 +7,7 @@ module.exports = {
     var phone=req.body.ad_phone;
     var img=req.body.ad_img;
     var Uid=req.body.ad_uid;
-    var approve=false;
+    var approve=0;
     var date=new Date().toUTCString().substr(0,16);
     Adv.create({
       ad_cat:category,
@@ -50,16 +50,33 @@ module.exports = {
   },
  
   /////////admin////////
-  GetAdmin:function(req,res){
-    Adv.find({ad_approve:"false"},function(err,data){
+  Gadmin:function(req,res){
+    Adv.find({ad_approve:false},function(err,data){
         if (err) {
-          throw err
+          res.json(err)
         }else{
+
+            
             res.json(data)
         }
         
       
        })
+    // Adv.find({ad_approve:false},function(err,data){
+    //   let dataRes
+    //   if(err){ 
+    //     res.json(err)}
+    //     else{
+    //       dataRes=data.filter(function(el){
+    //         if(el.ad_approve!==true){
+    //           return el
+    //         }
+    //       })
+    //       console.log("=====================")
+    //       //res.json(dataRes)
+    //     }
+    // })
+    console.log("++++++++++++++++++++++++++")
   },
   /// reject///
     Reject:function(req,res){
@@ -82,7 +99,7 @@ module.exports = {
       console.log(req.body.id)
       // res.json("approve")
       Adv.update(
-        {_id:req.body.id},{ad_approve:true},function(err,ok){
+        {_id:req.body.id},{ad_approve:1},function(err,ok){
           if(err){
             res.json(err)
           }

@@ -7,7 +7,7 @@ export class AdminService {
   constructor(private http:Http) { }
 
   get(){
-  	return this.http.get('/api/adds/adminGetall').map(res=>res.json())
+  	return this.http.get('/api/adds/admin/adminGetall').map(res=>res.json())
   }
 
   Appr(id){
