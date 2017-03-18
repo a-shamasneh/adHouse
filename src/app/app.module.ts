@@ -26,7 +26,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { userDataService } from './userdata.service';
 import  {AdminService} from './admin.service';
-import { FilterPipe } from './filter.pipe';
+
 
 
 
