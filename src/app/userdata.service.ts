@@ -9,5 +9,9 @@ export class userDataService {
   }	
   getAdv(id){
   	return this.http.get('/api/adds/'+id).map(res=>res.json())
+  }
+  changeImage(data){
+  	console.log(data)
+  	return this.http.post('/api/changImage',data).map(res=>res.json())
   }  
 }
