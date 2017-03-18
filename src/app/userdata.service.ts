@@ -12,6 +12,6 @@ export class userDataService {
   }
   changeImage(data){
   	console.log(data)
-  	return this.http.post('/api/changImage',data).map(res=>res.json())
+  	return this.http.put('/api/changImage',data).map(res=>res.json())
   }  
 }
