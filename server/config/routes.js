@@ -18,6 +18,7 @@ module.exports = function (app, express) {
 		app.post('/api/signin', UserController.signin);
 		app.post('/api/signup',UserController.signup);
 		app.get('/api/getUser/:_id',UserController.getUser);
+		app.post('/api/changImage',UserController.changImage);
 		
 
 

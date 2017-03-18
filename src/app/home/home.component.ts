@@ -6,6 +6,7 @@ import {CategoriesPipe} from '../categories.pipe';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
+
   
   
 })
@@ -14,7 +15,8 @@ export class HomeComponent implements OnInit {
   
   catgs:any = ["careers","cars","furniture","electronic","Other"];
    
-  ///////////
+
+
     alladds:any;
   constructor(private Get:GetaddService) {
   this.Get.getalladv().subscribe(ok=>{
