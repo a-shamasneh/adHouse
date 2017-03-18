@@ -7,7 +7,7 @@ module.exports = {
     var phone=req.body.ad_phone;
     var img=req.body.ad_img;
     var Uid=req.body.ad_uid;
-    var approve=false;
+    var approve=0;
     var date=new Date().toUTCString().substr(0,16);
     Adv.create({
       ad_cat:category,
@@ -52,10 +52,12 @@ module.exports = {
  
   /////////admin////////
   GetAdmin:function(req,res){
-    Adv.find({ad_approve:"false"},function(err,data){
+    Adv.find({ad_approve:{$eq:0}},function(err,data){
         if (err) {
           throw err
         }else{
+
+
             res.json(data)
         }
         
@@ -83,7 +85,7 @@ module.exports = {
       console.log(req.body.id)
       // res.json("approve")
       Adv.update(
-        {_id:req.body.id},{ad_approve:true},function(err,ok){
+        {_id:req.body.id},{ad_approve:1},function(err,ok){
           if(err){
             res.json(err)
           }
