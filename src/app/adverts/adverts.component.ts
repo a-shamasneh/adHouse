@@ -1,5 +1,6 @@
 import { Component, OnInit,ChangeDetectorRef} from '@angular/core';
 import { AddservService } from '../addserv.service';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-adverts',
@@ -14,6 +15,9 @@ export class AdvertsComponent implements OnInit {
 	 image:string;
 	 phone:string;
    id:string;
+
+   @ViewChild('input')
+myinput: any;
   constructor(private Adds:AddservService,private changeDetectorRef: ChangeDetectorRef) {
      if(!localStorage.getItem("com.addhouse")){
       window.location.href=("")
@@ -25,7 +29,11 @@ export class AdvertsComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+  reset() {
+    
+    this.myinput.nativeElement.value = "";
+    
+}
 
   // upload image start
   	fileChange(input){
@@ -75,7 +83,7 @@ export class AdvertsComponent implements OnInit {
         }
         this.Adds.Addserv(newAd).subscribe(ok=>{console.log(ok);
           this.message="Your Add has been uploaded waiting for approve";
-          
+         
         });
     }
 }
