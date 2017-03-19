@@ -6,8 +6,9 @@
     <span class = "header2" >One place all your needs
     </span>
     </h3>
- 
-    <select [(ngModel)]="term" >
+    
+    Pick Category:&nbsp;<select [(ngModel)]="term" >
+
   <option *ngFor="let cat of catgs ">{{cat}}</option>
 </select>
     <hr>
@@ -32,3 +33,4 @@
        
     </div>
 </div>
+<br><br>

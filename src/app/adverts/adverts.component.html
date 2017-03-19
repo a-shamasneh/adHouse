@@ -1,6 +1,6 @@
 <br>
 <div class="container">
-<form role="form" (submit)="addServ();myNgForm.resetForm()"  #myNgForm="ngForm">
+<form role="form" (submit)="addServ();myNgForm.resetForm();reset();"  #myNgForm="ngForm">
 <div class="row">
      <div class="col-md-4"></div>
     <div class="col-md-4 title">
@@ -56,7 +56,7 @@
         <div class="col-md-6">
            <div class="form-group">
           <label>upload image</label>
-          <input type="file"  (change)="fileChange(input)" #input  required accept="image/*" />
+          <input type="file"  (change)="fileChange(input)" #input  required accept="image/*"/>
         </div>
 
         </div>
