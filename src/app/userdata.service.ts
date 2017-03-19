@@ -14,4 +14,8 @@ export class userDataService {
   	console.log(data)
   	return this.http.put('/api/changImage',data).map(res=>res.json())
   }  
+  Remove(id){
+     return this.http.post('/api/adds/reject',{id:id});
+  }
+
 }
