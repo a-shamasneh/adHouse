@@ -30,6 +30,7 @@ module.exports = {
     })
   },
   signup: function (req, res) {
+
     var username = req.body.username;
     var password = req.body.password;
     var email=req.body.email;
@@ -86,7 +87,7 @@ module.exports = {
      })
   },
   changImage: function (req,res) {
-    // console.log(req.body)
+     console.log(req.body)
     if (req.body.image === undefined || req.body.image === null) {
     var image ='http://www.careerpilot.org.uk/images/profile-icon-lrg.png';
     }
