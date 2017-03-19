@@ -87,9 +87,15 @@ module.exports = {
      })
   },
   changImage: function (req,res) {
-    console.log(req.body)
+    // console.log(req.body)
+    if (req.body.image === undefined || req.body.image === null) {
+    var image ='http://www.careerpilot.org.uk/images/profile-icon-lrg.png';
+    }
+    else {
+      var image = req.body.image ;
+    }
         User.update(
-        {_id:req.body._id},{image:req.body.image},function(err,ok){
+        {_id:req.body._id},{image:image},function(err,ok){
           if(err){
             res.json(err)
           }

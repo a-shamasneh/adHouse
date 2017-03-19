@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { UserdataService } from './userdata.service';
+import { userDataService } from './userdata.service';
 
-describe('UserdataService', () => {
+describe('userDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [UserdataService]
+      providers: [userDataService]
     });
   });
 
-  it('should ...', inject([UserdataService], (service: UserdataService) => {
+  it('should ...', inject([userDataService], (service: userDataService) => {
     expect(service).toBeTruthy();
   }));
 });

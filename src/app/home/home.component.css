@@ -1,8 +1,8 @@
 img{
-	width: 180px;
+	width: 356px;
 	height: 280px;
 }
-
+/*
 div p{
 	font-weight: bold;
 }
@@ -20,114 +20,81 @@ div p{
 	font-size: 18px;
 }
 
-.pagination {
-  display: inline-block;
-  padding-left: 0;
-  margin: 20px 0;
-  border-radius: 4px;
+
+
+.thumbnail img {
+  
+padding-right:15px;
 }
-.pagination > li {
-  display: inline;
+
+.textRight {
+  
+text-align : right;
+}*/
+
+
+/* Added some padding to make it more readable */
+
+/*div[class^="col-"] {
+    padding - left:240px;
+}*/
+
+
+body {
+  min-height: 75rem; /* Can be removed; just added for demo purposes */
 }
-.pagination > li > a,
-.pagination > li > span {
-  position: relative;
+
+
+
+.jumbotron {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+  text-align:center;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+.lead {
+  text-align:center;
+}
+
+.button {
+   text-align:center;
+}
+
+.album {
+  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+.card {
   float: left;
-  padding: 6px 12px;
-  margin-left: -1px;
-  line-height: 1.42857143;
-  color: #337ab7;
-  text-decoration: none;
-  background-color: #fff;
-  border: 1px solid #ddd;
-}
-.pagination > li:first-child > a,
-.pagination > li:first-child > span {
-  margin-left: 0;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-.pagination > li:last-child > a,
-.pagination > li:last-child > span {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-.pagination > li > a:hover,
-.pagination > li > span:hover,
-.pagination > li > a:focus,
-.pagination > li > span:focus {
-  z-index: 2;
-  color: #23527c;
-  background-color: #eee;
-  border-color: #ddd;
-}
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus {
-  z-index: 3;
-  color: #fff;
-  cursor: default;
-  background-color: #337ab7;
-  border-color: #337ab7;
-}
-.pagination > .disabled > span,
-.pagination > .disabled > span:hover,
-.pagination > .disabled > span:focus,
-.pagination > .disabled > a,
-.pagination > .disabled > a:hover,
-.pagination > .disabled > a:focus {
-  color: #777;
-  cursor: not-allowed;
-  background-color: #fff;
-  border-color: #ddd;
-}
-/* Dropdown Button */
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
+.card > img {
+  margin-bottom: .75rem;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+.card-text {
+  font-size: 85%;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
 
