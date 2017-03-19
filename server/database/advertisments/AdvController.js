@@ -1,6 +1,7 @@
 var Adv = require('./AdvModel.js');
 module.exports = {
   Addserv:function(req,res){
+    console.log(req.body)
   	var category=req.body.ad_cat;
   	var location=req.body.ad_loc;
     var desc=req.body.ad_desc;
@@ -17,6 +18,7 @@ module.exports = {
       ad_approve:approve,
       ad_phone:phone,
       ad_uid:Uid,
+      ad_date:date
     },function(err,ok){
        if(err){
           res.json(err);
