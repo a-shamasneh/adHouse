@@ -1,6 +1,7 @@
 import { Component, OnInit,ChangeDetectorRef} from '@angular/core';
 import {Observable} from 'rxjs/Rx';
 import { userDataService } from '../userdata.service';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
