@@ -9,6 +9,9 @@ export class AdminComponent implements OnInit {
 	Adds:any;
 	
   constructor(private Admin:AdminService) { 
+  	if(JSON.parse(localStorage.getItem('UserType'))===false){
+         window.location.href=("")
+       }
   		this.Admin.get().subscribe(ok=>{
   			this.Adds=ok;
   			console.log(this.Adds)

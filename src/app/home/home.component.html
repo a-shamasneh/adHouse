@@ -1,4 +1,41 @@
-<div class="container clear">
+ <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">AdHouse </h1>
+        <p class="lead text-muted">One place, all your needs</p>
+         
+        <p class = "button">
+          <a href="#" class="btn btn-primary">Choose category</a>
+          <select  [(ngModel)]="term" class="btn btn-secondary" >
+
+         <option  *ngFor="let cat of catgs ">{{cat}}</option>
+        </select>
+          
+        </p>
+      </div>
+    </section>
+
+    <div class="album text-muted">
+      <div class="container">
+
+        <div class="row">
+          <div  class="col-md-4" *ngFor="let ad of alladds | filter: term"  >
+            <img data-src="{{ad.ad_img}}" alt="Card image cap">
+            <p class="card-text">
+                <span class="media-heading">{{ad.ad_date}}</span>
+                <span>Category : {{ad.ad_cat}}</span>
+                <span>Location: {{ad.ad_loc}}</span>
+                <span>Description: {{ad.ad_desc}}</span>
+                <span> Contact : {{ad.ad_phone}}</span>
+            </p>
+          </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+<!-- <div class="container clear">
 <br>
     <h3 class= "header">
     <span class ="header1" >AdHouse 
@@ -6,15 +43,51 @@
     <span class = "header2" >One place all your needs
     </span>
     </h3>
+<<<<<<< HEAD
     
     Pick Category:&nbsp;<select [(ngModel)]="term" >
 
   <option *ngFor="let cat of catgs ">{{cat}}</option>
+=======
+ 
+    <select  [(ngModel)]="term" >
+
+  <option  *ngFor="let cat of catgs ">{{cat}}</option>
+>>>>>>> 3c7ef071cfbf823fd3689a8cc8a0e41470a5ccff
 </select>
     <hr>
-    <div>
+
+
+
+<div class="row"  *ngFor="let ad of alladds | filter: term"  >
+  <div class="col-xs-12 col-md-8" >
+    <div class="media">
+        <a href="#" class="pull-left">
+            <img src="{{ad.ad_img}}" class="media-object" alt="">
+        </a>
+        <div class="media-body">
+        <h1 class="media-heading">{{ad.ad_date}}</h1>
+            <h4>Category : {{ad.ad_cat}}</h4>
+          <h4> Location: {{ad.ad_loc}}</h4>
+           <h4>Description: {{ad.ad_desc}}</h4>
+          <h4> Contact : {{ad.ad_phone}}</h4>
+        </div>
+    </div>
+    </div>
+    </div>
+    <hr>
+
+</div>
+
+ -->
+
+
+
+ <!--    <div>
         <div 
+
         *ngFor="let ad of alladds | filter: term"  >
+
             <div class="col-md-3">
              <img class="img-responsive" src="{{ad.ad_img}}" alt="">
         <p>
@@ -33,4 +106,16 @@
        
     </div>
 </div>
+<<<<<<< HEAD
 <br><br>
+=======
+
+
+        <div class="media-body">
+          <h1 class="media-heading">Bootstrap thumbnail example</h1>
+            <h4>Using the .media and .media-body built-in classes</h4>
+          <h4>Simple trick, just apply pull-left to the image</h4>
+        </div>
+    </div>
+    <hr> -->
+>>>>>>> 3c7ef071cfbf823fd3689a8cc8a0e41470a5ccff

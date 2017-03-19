@@ -19,6 +19,12 @@ export class NavComponent implements OnInit {
   		return true
   	}
   	}
+    authAdmin(){
+      if(JSON.parse(localStorage.getItem('UserType'))===true){
+        return true
+       }
+       return false
+    }
   logout(){
   	localStorage.clear();
   	window.location.href=("")

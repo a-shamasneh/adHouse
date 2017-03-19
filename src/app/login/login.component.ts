@@ -25,8 +25,11 @@ constructor(private Auth:AuthService) {}
   		this.Auth.signin(user).subscribe(ok=>{
   			if(typeof(ok)!=="string"){
   				localStorage.setItem('com.addhouse',JSON.stringify(ok.token));
-  			localStorage.setItem('id',JSON.stringify(ok.id));
-        window.location.href=("/#Adds")
+  			  localStorage.setItem('id',JSON.stringify(ok.id));
+          localStorage.setItem('UserType',JSON.stringify(ok.Admin));
+          //console.log(localStorage.getItem('UserType'));
+         
+        // window.location.href=("/#Adds")
   			this.message=ok.id
   		}else{
   			this.message=ok;

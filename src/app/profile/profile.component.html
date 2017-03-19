@@ -1,55 +1,71 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
 
-<div class="row">
-    <div class="col-md-2">
-        <img class="img-circle" style="width:100%" src="{{image}}">
-              <div class="row">
-      <div class="col-md-3"></div>
-        <div class="col-md-6">
-           <div class="form-group">
-          <input type="file"  (change)="fileChange(input)" #input  required accept="image/*" />
-           <button class="btn btn-success btn-block btn-lg" type="submit" (click)="changeImage()">Change</button>
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <img  src="{{image}}">
+                    <br>
+                    <form (submit)="changeImage()">
+                    <label class="btn btn-default btn-file">
+                    Click here<input type="file"  (change)="fileChange(input)" #input  required accept="image/*"  required>
+                    </label>
+                    <br>
+                    <button class="btn-primary" type="submit">Change</button>
+                    </form>
+          
+                     
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <a href="#">{{username}}</a>
+                    </div>
+                    <div class="desc">{{email}}</div>
+                    <div class="desc">{{date}}</div>
+                    
+                </div>
+                
+            </div>
+
         </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3 center">
+        <button type="button" class=" btn-success">published Adv 
+        <span class="badge">({{aproved}})</span></button>
+        </div>
+        <div class="col-md-3 center">
+            <button type="button" class=" btn-danger">
+            Adv Pending
+        <span class="badge">({{notAproved}})</span></button>
         </div>
         <div class="col-md-3"></div>
-      </div>
-     </div>
-     <div class="col-md-10">
-     <hr>
-          <hr>
-     <hr>
-     <hr>
-
-         <h1>{{username}}'s profile</h1>
-         <hr>
-         <p>Email: {{email}}</p>
-         <hr>
-         <p>Last Update: {{date}}</p>
-     </div>    
-</div>
-<hr>
-<hr>
-<div>
-        <div *ngFor="let ad of userAdv">
-            <div class="col-md-3">
-
-            <ul>
-                    <li>
-             <img class="img-responsive" src="{{ad.ad_img}}" alt="">
-                        
-            {{ad.ad_date}}&nbsp; 
-            <br> 
-            Category : {{ad.ad_cat}}<br>
-            Location : {{ad.ad_loc}}&nbsp;
-            <br>
-            Description :  {{ad.ad_desc}}
-            <br>
-            Contact : {{ad.ad_phone}}<br>
-                <hr>
-                <hr>
-
-                    </li>               
-            </ul>
-
-        </div> 
-        </div>
     </div>
+    <hr>
+    <br>
+   
+    <div class="row ">
+        <div class="col-md-4 portfolio-item center " *ngFor="let ad of userAdv">
+                <img class="img-thumbnail imgpr " src="{{ad.ad_img}}" >
+                <br>
+            
+                    <ul>
+                    <li>Category:{{ad.ad_cat}}</li>
+                    <li>Location:{{ad.ad_loc}}</li>
+                    <li>Phone:{{ad.ad_phone}}</li>
+                    <li>Description:{{ad.ad_desc}}</li>
+                    <li> Posted Date : {{ad.ad_date}}</li>
+                    <li><button class="btn-danger" type="submit" (click)="Reject(ad._id)">Remove Adv</button></li>
+                    
+              </ul>
+                
+            </div>
+    </div>
+
+</div>
+<br>

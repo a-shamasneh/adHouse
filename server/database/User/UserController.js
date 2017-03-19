@@ -19,7 +19,7 @@ module.exports = {
           utils.comparePass(password,data[0].password,function(ok){
             if(ok){
               var token=jwt.encode(data[0],'user');
-              res.json({token:token, id:data[0]._id,Admin:data[0].admin})
+              res.json({token:token, id:data[0]._id,Admin:data[0].Admin})
             }
             else{
               res.json("password wrong")
@@ -35,7 +35,7 @@ module.exports = {
     var password = req.body.password;
     var email=req.body.email;
     var image ='http://www.careerpilot.org.uk/images/profile-icon-lrg.png';
-    var admin=true;
+    var admin=false;
     var date=new Date().toUTCString().substr(0,16);
      utils.hashpass(password,function(hash){
              password=hash});
@@ -87,9 +87,15 @@ module.exports = {
      })
   },
   changImage: function (req,res) {
-    console.log(req.body)
+    // console.log(req.body)
+    if (req.body.image === undefined || req.body.image === null) {
+    var image ='http://www.careerpilot.org.uk/images/profile-icon-lrg.png';
+    }
+    else {
+      var image = req.body.image ;
+    }
         User.update(
-        {_id:req.body._id},{image:req.body.image},function(err,ok){
+        {_id:req.body._id},{image:image},function(err,ok){
           if(err){
             res.json(err)
           }
