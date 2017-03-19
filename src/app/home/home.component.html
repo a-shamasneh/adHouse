@@ -43,10 +43,15 @@
     <span class = "header2" >One place all your needs
     </span>
     </h3>
- 
-    <select  [(ngModel)]="term" >
 
-  <option  *ngFor="let cat of catgs ">{{cat}}</option>
+    
+    Pick Category:&nbsp;
+<select [(ngModel)]="term" >
+
+  <option *ngFor="let cat of catgs ">{{cat}}</option>
+
+ 
+   
 </select>
     <hr>
 
@@ -100,11 +105,8 @@
     </div>
 </div>
 
+<br><br>
 
-        <div class="media-body">
-          <h1 class="media-heading">Bootstrap thumbnail example</h1>
-            <h4>Using the .media and .media-body built-in classes</h4>
-          <h4>Simple trick, just apply pull-left to the image</h4>
-        </div>
-    </div>
-    <hr> -->
+
+
+

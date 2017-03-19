@@ -1,4 +1,6 @@
 var Adv = require('./AdvModel.js');
+var UserC=require('../User/UserController.js')
+
 module.exports = {
   Addserv:function(req,res){
     console.log(req.body)
@@ -85,7 +87,13 @@ module.exports = {
     Reject:function(req,res){
       console.log(req.body.id)
        // res.json("Reject")
-       Adv.remove({_id:req.body.id},function(err,ok){
+       Adv.findOne({_id:req.body.id},function(err,ok){
+        if(err){throw err}else{
+         // console.log(ok.ad_uid)
+          var i=ok.ad_uid;
+          var desc=ok.ad_desc;
+          UserC.SendemailR(i,desc);
+          Adv.remove({_id:req.body.id},function(err,ok){
         if(err){
           res.json(err)
         }
@@ -93,6 +101,9 @@ module.exports = {
           res.json("deleted succesfully!!")
         }
        })
+        }
+       })
+       
 
     },
 
@@ -100,8 +111,11 @@ module.exports = {
   ///approve//
   Approve:function(req,res){
       console.log(req.body.id)
-      // res.json("approve")
-      Adv.update(
+      Adv.findOne({_id:req.body.id},function(err,ok){
+        if(err){throw err}
+          else{
+      UserC.SendemailA(ok.ad_uid,ok.ad_desc,ok.ad_img);
+            Adv.update(
         {_id:req.body.id},{ad_approve:1},function(err,ok){
           if(err){
             res.json(err)
@@ -110,6 +124,10 @@ module.exports = {
             res.json("approved succeesfully!!")
           }
       })
+          }
+      })
+      // res.json("approve")
+      
     }
   ////
 
