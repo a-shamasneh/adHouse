@@ -26,6 +26,11 @@
                 <span>Location: {{ad.ad_loc}}</span>
                 <span>Description: {{ad.ad_desc}}</span>
                 <span> Contact : {{ad.ad_phone}}</span>
+                <li>
+      <a  class="navbar-brand" href="#" (click) = "advertId(ad._id)"       
+      [routerLink]="['/advertisment/'+ad._id]"  >Comments</a>
+                </li>
+                <br>
             </p>
           </div>
         </div>

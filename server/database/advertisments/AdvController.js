@@ -1,7 +1,6 @@
 var Adv = require('./AdvModel.js');
 module.exports = {
   Addserv:function(req,res){
-    console.log(req.body)
   	var category=req.body.ad_cat;
   	var location=req.body.ad_loc;
     var desc=req.body.ad_desc;
@@ -110,8 +109,17 @@ module.exports = {
             res.json("approved succeesfully!!")
           }
       })
+    },
+getAdv:function (req,res) {
+  Adv.find({_id:req.params.advId},function (err,data){
+    if (!data.length || data === undefined ) {
+      res.json('no data for this adv ')
     }
-  ////
-
+    else{
+      console.log('Wow , advertisment information retrived ')
+      res.json (data)
+    }
+  })  
+}
 
 };

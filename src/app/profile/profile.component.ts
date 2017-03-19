@@ -104,7 +104,7 @@ notAproved: number = 0;
       console.log(id);
       this.user.Remove(id).subscribe(ok=>{
         console.log(ok)
-        for(var i=0;i<this.userAdv.length;i++){
+        for(var i=0 ; i<this.userAdv.length; i++){
           if(this.userAdv[i]._id === id){
             this.userAdv.splice(i,1)
             console.log('deleted successfuly yeaaa')

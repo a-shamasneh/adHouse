@@ -1,0 +1,42 @@
+        <div class="row">
+          <div  class="col-md-4" *ngFor="let ad of advdata"  >
+            <img class = "img" data-src="{{ad.ad_img}}" >
+            <p class="card-text">
+                <span class="media-heading">{{ad.ad_date}}</span>
+                <br>
+                <span>Category : {{ad.ad_cat}}</span>
+                <br>
+                <span>Location: {{ad.ad_loc}}</span>
+                <br>
+                <span>Description: {{ad.ad_desc}}</span>
+                <br>
+                <span> Contact : {{ad.ad_phone}}</span>
+                <br>
+            </p>
+          </div>
+        </div>
+                <br>
+                <br>
+                <br>
+                <br>
+
+        <div class="row">
+          <div  class="col-md-9" *ngFor="let comm of comments">
+          <ul>
+          	<li>
+
+          		{{comm.text}} &nbsp; {{comm.username}} &nbsp; {{comm.date}}
+        	<button type="submit"  >Edit</button>
+        	<br>
+        <div class="col-md-6">
+        	          <div class="form-group">
+            <input type="password" name="password"  
+            class="form-control input-lg"
+             placeholder="Password" tabindex="5"
+             [(ngModel)]="com">
+          </div>
+          </div>
+          	</li>
+          </ul>
+        </div>
+        </div>

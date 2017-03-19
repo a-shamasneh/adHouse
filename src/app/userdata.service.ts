@@ -11,11 +11,25 @@ export class userDataService {
   	return this.http.get('/api/adds/'+id).map(res=>res.json())
   }
   changeImage(data){
-  	console.log(data)
   	return this.http.put('/api/changImage',data).map(res=>res.json())
   }  
   Remove(id){
-     return this.http.post('/api/adds/reject',{id:id});
+     return this.http.post('/api/adds/reject',{id:id}).map(res=>res.json());
+  }
+  InsertCom (data){
+    return this.http.post('/api/insertComment',data).map(res=>res.json());
+  }
+  getCommById (advId){
+    return this.http.get('/api/getCommentsById/'+advId).map(res=>res.json());
+  }
+  editComm (data){
+    return this.http.put('/api/editComment',data).map(res=>res.json());
+  }
+  delComm (comId){
+    return this.http.delete('/api/removeCommentById/delete/:_id'+comId).map(res=>res.json());
+  }
+  getAdvInfo (id){
+    return this.http.get ('/api/addserv/'+id).map(res=>res.json());
   }
 
 }
