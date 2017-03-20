@@ -1,6 +1,7 @@
 import { Component, OnInit,ChangeDetectorRef} from '@angular/core';
 import {Observable} from 'rxjs/Rx';
 import { userDataService } from '../userdata.service';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -104,7 +105,7 @@ notAproved: number = 0;
       console.log(id);
       this.user.Remove(id).subscribe(ok=>{
         console.log(ok)
-        for(var i=0;i<this.userAdv.length;i++){
+        for(var i=0 ; i<this.userAdv.length; i++){
           if(this.userAdv[i]._id === id){
             this.userAdv.splice(i,1)
             console.log('deleted successfuly yeaaa')
