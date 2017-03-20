@@ -1,11 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { userDataService } from './userdata.service';
-
-describe('userDataService', () => {
+////////////////////////////////////////////////////////
+import { Http } from '@angular/http';
+/////////////////////////////////////////
+describe('Service:userDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [userDataService]
+      providers: [userDataService,
+       {provide: Http, useValue: userDataService }]
     });
   });
 

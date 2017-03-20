@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
+import { Http } from '@angular/http';
 import { AdminComponent } from './admin.component';
+import {AdminService} from '../admin.service';
 
 describe('AdminComponent', () => {
   let component: AdminComponent;
@@ -8,7 +11,10 @@ describe('AdminComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminComponent ]
+      declarations: [ AdminComponent],
+      providers: [ AdminService ,
+      {provide: Http, useValue: AdminService }],
+      schemas : [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

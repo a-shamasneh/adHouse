@@ -114,19 +114,8 @@ module.exports = {
       })
       // res.json("approve")
       
-    },
-  ////
+    }
+  
 
- providerApi:function(){
-  console.log("++++++++++++++")
-  // Adv.find({},function(err,adds){
-  //     if(err){
-  //     throw err
-  //     }else{
-  //       console.log(adds)
-  //      return adds
-  //     }
-
-  //   })
- }
+ 
 };
