@@ -24,19 +24,36 @@
           <div  class="col-md-9" *ngFor="let comm of comments">
           <ul>
           	<li>
-
-          		{{comm.text}} &nbsp; {{comm.username}} &nbsp; {{comm.date}}
-        	<button type="submit"  >Edit</button>
+          		 <h5>
+          		 -- : 	{{comm.text}}
+          		 </h5> 
+          		 <br>
+          	<span class="largefont" style="color:blue" >
+          		User name : {{comm.username}} &nbsp; &nbsp; &nbsp; Posted date : {{comm.date}} 
+        	<button *ngIf = "commentAuth(comm.userId)" (click)="editComment()" type="submit"  >Edit</button>
+        	<button *ngIf = "commentAuth(comm.userId)" (click)="deleteComment()" type="submit"   >delete</button>
+          	</span>	  
+        	
         	<br>
         <div class="col-md-6">
         	          <div class="form-group">
-            <input type="password" name="password"  
-            class="form-control input-lg"
-             placeholder="Password" tabindex="5"
-             [(ngModel)]="com">
+
+<div style="overflow: hidden; padding-right: .5em;">
+
+<button  (click)="anotherSubmit();!editComment()" type="submit" *ngIf=toggle >submit</button>
+<br>
+<textarea id="myTextarea"    [hidden]=!toggle [(ngModel)]="text">
+   </textarea>
+</div>​
+
           </div>
           </div>
           	</li>
           </ul>
         </div>
+   <br>
+   <input type="text" style="width: 100%;" [(ngModel)]="com" *ngIf="isAuth()"  placeholder="insert comment"/>
+<button  (click)="insertComment()" type="submit"  *ngIf="isAuth()">submit</button>
         </div>
+<br>
+<br>

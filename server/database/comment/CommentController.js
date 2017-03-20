@@ -2,19 +2,20 @@ var Comment = require('./CommentModel.js');
 var User = require ('../User/UserModel.js');
 module.exports = {
 	insertComment : function (req,res) {
-		    var date=new Date().toUTCString().substr(0,16);
-		var username = '';
+	    var username ='';
+		    var date=new Date().toUTCString().substr(0,26);
 		User.find({_id:req.body.userId},function(err,data){
 			if (!err) {
-				username = data[0].username;
+				this.username = data[0].username;
+				console.log(this.username)
+				
 			}
-		})
-		console.log(req.body)
+		}).then(function(data){
 		var userId = req.body.userId ;
 		var advId = req.body.advId ;
 		var text = req.body.text ;
 		 Comment.create ({
-		 	username:username,
+		 	username:this.username,
 			userId :userId ,
 			advId :advId ,
 			text :text ,
@@ -27,6 +28,8 @@ module.exports = {
 				console.log("insert successfuly");
 				res.json(data);
 			}
+		})
+
 		})
 	},
 	getCommentsById : function (req , res) {
