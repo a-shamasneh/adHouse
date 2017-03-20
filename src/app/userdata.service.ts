@@ -26,7 +26,7 @@ export class userDataService {
     return this.http.put('/api/editComment',data).map(res=>res.json());
   }
   delComm (comId){
-    return this.http.delete('/api/removeCommentById/delete/:_id'+comId).map(res=>res.json());
+    return this.http.delete('/api/removeCommentById/delete/'+comId).map(res=>res.json());
   }
   getAdvInfo (id){
     return this.http.get ('/api/addserv/'+id).map(res=>res.json());
