@@ -123,17 +123,16 @@ module.exports = {
             res.json("approved succeesfully!!")
           }
       })
-    },
+    }
+  })
+},
+
 getAdv:function (req,res) {
   Adv.find({_id:req.params.advId},function (err,data){
     if (!data.length || data === undefined ) {
       res.json('no data for this adv ')
-          }
-      })
-      // res.json("approve")
 
-    }
-    else{
+    }else{
       console.log('Wow , advertisment information retrived ')
       res.json (data)
     }
