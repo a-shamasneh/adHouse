@@ -9,7 +9,7 @@ export class AddservService {
   Addserv(data){
   console.log(data);
         
-        return this.http.post('/api/addserv',data);
+        return this.http.post('/api/addserv',data)
             
     }
 }
