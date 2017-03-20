@@ -67,21 +67,7 @@ module.exports = {
         
       
        })
-    // Adv.find({ad_approve:false},function(err,data){
-    //   let dataRes
-    //   if(err){ 
-    //     res.json(err)}
-    //     else{
-    //       dataRes=data.filter(function(el){
-    //         if(el.ad_approve!==true){
-    //           return el
-    //         }
-    //       })
-    //       console.log("=====================")
-    //       //res.json(dataRes)
-    //     }
-    // })
-    console.log("++++++++++++++++++++++++++")
+    
   },
   /// reject///
     Reject:function(req,res){
