@@ -20,22 +20,25 @@
         <div class="row">
           <div  class="col-md-4" *ngFor="let ad of alladds | filter: term"  >
             <img data-src="{{ad.ad_img}}" alt="Card image cap">
-            <p class="card-text">
-                <span class="media-heading">{{ad.ad_date}}</span>
-                <span>Category : {{ad.ad_cat}}</span>
-                <span>Location: {{ad.ad_loc}}</span>
-                <span>Description: {{ad.ad_desc}}</span>
-                <span> Contact : {{ad.ad_phone}}</span>
+
+            <div class="card-text">
+                <div class="media-heading">{{ad.ad_date}}</div>
+                <div>Category : {{ad.ad_cat}}</div>
+                <div>Location: {{ad.ad_loc}}</div>
+                <div>Description: {{ad.ad_desc}}</div>
+                <div> Contact : {{ad.ad_phone}}</div>
                 <li>
       <a  class="navbar-brand" href="#" (click) = "advertId(ad._id)"       
       [routerLink]="['/advertisment/'+ad._id]"  >Comments</a>
                 </li>
                 <br>
-            </p>
+            </div>
+
           </div>
         </div>
     </div>
     </div>
+
 
 
 
