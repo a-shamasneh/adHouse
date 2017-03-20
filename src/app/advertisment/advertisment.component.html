@@ -1,0 +1,57 @@
+        <div class="row">
+          <div  class="col-md-4" *ngFor="let ad of advdata"  >
+            <img class = "img" data-src="{{ad.ad_img}}" >
+            <p class="card-text">
+                <span class="media-heading">{{ad.ad_date}}</span>
+                <br>
+                <span>Category : {{ad.ad_cat}}</span>
+                <br>
+                <span>Location: {{ad.ad_loc}}</span>
+                <br>
+                <span>Description: {{ad.ad_desc}}</span>
+                <br>
+                <span> Contact : {{ad.ad_phone}}</span>
+                <br>
+            </p>
+          </div>
+        </div>
+                <br>
+                <br>
+                <br>
+                <br>
+
+        <div class="row">
+          <div  class="col-md-9" *ngFor="let comm of comments">
+          <ul>
+          	<li>
+          		 <h5>
+          		 - : 	{{comm.text}}
+          		 </h5> 
+          		 <br>
+          	<span class="largefont" style="color:blue" >
+          		User name : {{comm.username}} &nbsp; &nbsp; &nbsp; Posted date : {{comm.date}} 
+        	<button *ngIf = "commentAuth(comm.userId)" (click)="editComment(comm._id)" type="submit"  >Edit</button>
+        	<button *ngIf = "commentAuth(comm.userId)" (click)="deleteComment()" type="submit"   >delete</button>
+          	</span>	  
+        	
+        	<br>
+        <div class="col-md-6">
+        	          <div class="form-group">
+
+
+<br>
+
+          </div>
+          </div>
+          	</li>
+          </ul>
+        </div>
+   <br>
+        </div>
+<button  (click)="anotherSubmit();!editComment();anotherSubmit()" type="submit" *ngIf=toggle >submit</button>
+<textarea id="myTextarea"    [hidden]=!toggle [(ngModel)]="text">
+   </textarea>
+   <input type="text" style="width: 100%;" [(ngModel)]="com" *ngIf="isAuth()"  placeholder="insert comment"/>
+<button  (click)="insertComment()" type="submit"  *ngIf="isAuth()">submit</button>
+<br>
+<br>

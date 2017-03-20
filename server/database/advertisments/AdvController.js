@@ -114,6 +114,7 @@ module.exports = {
       })
       // res.json("approve")
       
+
     },
     getAdv:function (req,res) {
  Adv.find({_id:req.params.advId},function (err,data){
@@ -126,6 +127,8 @@ module.exports = {
    }
  })  
 }
+    
+
   
 
  

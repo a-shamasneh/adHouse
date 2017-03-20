@@ -2,10 +2,13 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { GetaddService } from './getadd.service';
 
-describe('GetaddService', () => {
+import { Http } from '@angular/http';
+
+describe('Service : GetaddService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GetaddService]
+      providers: [GetaddService,
+      {provide: Http, useValue: GetaddService }]
     });
   });
 

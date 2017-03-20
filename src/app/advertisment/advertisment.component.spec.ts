@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FooterComponent } from './footer.component';
+import { AdvertismentComponent } from './advertisment.component';
 
-describe('FooterComponent', () => {
-  let component: FooterComponent;
-  let fixture: ComponentFixture<FooterComponent>;
+describe('AdvertismentComponent', () => {
+  let component: AdvertismentComponent;
+  let fixture: ComponentFixture<AdvertismentComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterComponent ]
+      declarations: [ AdvertismentComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FooterComponent);
+    fixture = TestBed.createComponent(AdvertismentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,6 +22,4 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  
 });
